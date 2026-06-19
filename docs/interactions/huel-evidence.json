@@ -1,0 +1,1924 @@
+{
+  "url": "https://huel.com/",
+  "ts": "2026-06-10T18:19:21.375Z",
+  "method": "Chrome DevTools Protocol with real mouse hover/click",
+  "interactions": [
+    {
+      "area": "Top promo strip",
+      "trigger": "hover",
+      "before": {
+        "tag": "DIV",
+        "text": "FREE SHIPPING $65+\nSUBSCRIBE AND SAVE 20%\nHSA/FSA ELIGIBLE: LEARN MORE\nGIVE 25%, GET 25%\nFREE SHIPPING $65+\nSUBSCRIBE AND SAVE 20%\nHSA/FSA ELIGIBLE: LEARN MORE\nGIVE 25%, GET 25%\nFREE SHIPPING $65+\nSUBSCRIBE AND SAVE 20%\n",
+        "class": "promo-bar-with-customer-location-module__FiDYkW__PromoBarWithCustomerLocation",
+        "ariaExpanded": null,
+        "dataState": null,
+        "href": null,
+        "src": "https://huel.io/flags/us.svg?fm=webp&w=100&q=60",
+        "imgs": [
+          {
+            "src": "https://huel.io/flags/us.svg?fm=webp&w=100&q=60",
+            "opacity": "1",
+            "transform": "none",
+            "transition": "all 0s ease",
+            "cls": "image-module__ZYzVpG__Image__image"
+          }
+        ],
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 56
+        },
+        "opacity": "1",
+        "transform": "none",
+        "visibility": "visible",
+        "pointerEvents": "auto",
+        "transitionProperty": "all",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "maxHeight": "none",
+        "clipPath": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "overflow": "visible",
+        "animationName": "none",
+        "animationDuration": "0s",
+        "animationPlayState": "running"
+      },
+      "after": {
+        "tag": "DIV",
+        "text": "FREE SHIPPING $65+\nSUBSCRIBE AND SAVE 20%\nHSA/FSA ELIGIBLE: LEARN MORE\nGIVE 25%, GET 25%\nFREE SHIPPING $65+\nSUBSCRIBE AND SAVE 20%\nHSA/FSA ELIGIBLE: LEARN MORE\nGIVE 25%, GET 25%\nFREE SHIPPING $65+\nSUBSCRIBE AND SAVE 20%\n",
+        "class": "promo-bar-with-customer-location-module__FiDYkW__PromoBarWithCustomerLocation",
+        "ariaExpanded": null,
+        "dataState": null,
+        "href": null,
+        "src": "https://huel.io/flags/us.svg?fm=webp&w=100&q=60",
+        "imgs": [
+          {
+            "src": "https://huel.io/flags/us.svg?fm=webp&w=100&q=60",
+            "opacity": "1",
+            "transform": "none",
+            "transition": "all 0s ease",
+            "cls": "image-module__ZYzVpG__Image__image"
+          }
+        ],
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 56
+        },
+        "opacity": "1",
+        "transform": "none",
+        "visibility": "visible",
+        "pointerEvents": "auto",
+        "transitionProperty": "all",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "maxHeight": "none",
+        "clipPath": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "overflow": "visible",
+        "animationName": "none",
+        "animationDuration": "0s",
+        "animationPlayState": "running"
+      },
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-promo-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-promo-after.png"
+      ]
+    },
+    {
+      "area": "Header nav / desktop mega menu",
+      "trigger": "hover Shop",
+      "before": {
+        "tag": "BUTTON",
+        "text": "Shop all",
+        "class": "navbar-module__hH2QXG__Navbar__trigger",
+        "ariaExpanded": "false",
+        "dataState": null,
+        "href": null,
+        "src": null,
+        "imgs": [],
+        "rect": {
+          "x": 115.65625,
+          "y": 56,
+          "w": 98.15625,
+          "h": 56
+        },
+        "opacity": "1",
+        "transform": "none",
+        "visibility": "visible",
+        "pointerEvents": "auto",
+        "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+        "transitionDuration": "0.2s",
+        "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "maxHeight": "none",
+        "clipPath": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "overflow": "visible",
+        "animationName": "none",
+        "animationDuration": "0s",
+        "animationPlayState": "running"
+      },
+      "after": {
+        "tag": "BUTTON",
+        "text": "Shop all",
+        "class": "navbar-module__hH2QXG__Navbar__trigger navbar-module__hH2QXG__Navbar__trigger--is-active",
+        "ariaExpanded": "true",
+        "dataState": null,
+        "href": null,
+        "src": null,
+        "imgs": [],
+        "rect": {
+          "x": 115.65625,
+          "y": 56,
+          "w": 98.15625,
+          "h": 56
+        },
+        "opacity": "1",
+        "transform": "none",
+        "visibility": "visible",
+        "pointerEvents": "auto",
+        "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+        "transitionDuration": "0.2s",
+        "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "maxHeight": "none",
+        "clipPath": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "overflow": "visible",
+        "animationName": "none",
+        "animationDuration": "0s",
+        "animationPlayState": "running"
+      },
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-header-shop-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-megamenu-open.png"
+      ],
+      "panels": [
+        {
+          "tag": "DIV",
+          "text": "Shop by Collection\nShop by Goal\nHelp me choose\nShop outlet & save\nShop all\n\nBestsellers\n\nPowdered Meals\n\nGreens & Superfoods\n\nBundles\n\nReady-to-drink Meals\n\nHot Instant Meals\n\nDrin",
+          "cls": "navbar-module__hH2QXG__Navbar__panel-container",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 0,
+            "y": 113,
+            "w": 1440,
+            "h": 481
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "all 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "boxShadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "backdropFilter": "none"
+        },
+        {
+          "tag": "DIV",
+          "text": "Shop by Collection\nShop by Goal\nHelp me choose\nShop outlet & save\nShop all\n\nBestsellers\n\nPowdered Meals\n\nGreens & Superfoods\n\nBundles\n\nReady-to-drink Meals\n\nHot Instant Meals\n\nDrin",
+          "cls": "navbar-module__hH2QXG__Navbar__panel navbar-module__hH2QXG__Navbar__panel--is-open",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 0,
+            "y": 113,
+            "w": 1440,
+            "h": 481
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "height, opacity, visibility 0.3s, 0.3s, 0.3s ease-out, ease-out, ease-out",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px",
+          "background": "rgb(255, 255, 255)",
+          "backdropFilter": "none"
+        },
+        {
+          "tag": "DIV",
+          "text": "Shop by Collection\nShop by Goal\nHelp me choose\nShop outlet & save\nShop all\n\nBestsellers\n\nPowdered Meals\n\nGreens & Superfoods\n\nBundles\n\nReady-to-drink Meals\n\nHot Instant Meals\n\nDrin",
+          "cls": "navbar-module__hH2QXG__Navbar__panel-content",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 0,
+            "y": 113,
+            "w": 1440,
+            "h": 480.5
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "all 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "boxShadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "backdropFilter": "none"
+        },
+        {
+          "tag": "DIV",
+          "text": "Shop by Collection\nShop by Goal\nHelp me choose\nShop outlet & save\nShop all\n\nBestsellers\n\nPowdered Meals\n\nGreens & Superfoods\n\nBundles\n\nReady-to-drink Meals\n\nHot Instant Meals\n\nDrin",
+          "cls": "navbar-module__hH2QXG__Navbar__panel-item navbar-module__hH2QXG__Navbar__panel-item--is-active",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 0,
+            "y": 113,
+            "w": 1440,
+            "h": 480.5
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "all 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "boxShadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "backdropFilter": "none"
+        },
+        {
+          "tag": "DIV",
+          "text": "Shop by Collection\nShop by Goal\nHelp me choose\nShop outlet & save\nShop all\n\nBestsellers\n\nPowdered Meals\n\nGreens & Superfoods\n\nBundles\n\nReady-to-drink Meals\n\nHot Instant Meals\n\nDrin",
+          "cls": "desktop-nav-shop-panel-module__CfY33q__DesktopNavShopPanel",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 0,
+            "y": 113,
+            "w": 1440,
+            "h": 480.5
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "all 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "boxShadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "backdropFilter": "none"
+        },
+        {
+          "tag": "DIV",
+          "text": "Shop by Collection\nShop by Goal\nHelp me choose\nShop outlet & save\nShop all\n\nBestsellers\n\nPowdered Meals\n\nGreens & Superfoods\n\nBundles\n\nReady-to-drink Meals\n\nHot Instant Meals\n\nDrin",
+          "cls": "tabs-module__jpLcqa__Tabs tabs-module__jpLcqa__Tabs--is-vertical",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 0,
+            "y": 113,
+            "w": 1440,
+            "h": 480.5
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "all 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "boxShadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "backdropFilter": "none"
+        },
+        {
+          "tag": "DIV",
+          "text": "Bestsellers\n\nPowdered Meals\n\nGreens & Superfoods\n\nBundles\n\nReady-to-drink Meals\n\nHot Instant Meals\n\nDrinks & Snacks\n\nOfficial Huel Merch",
+          "cls": "desktop-nav-shop-panel-module__CfY33q__DesktopNavShopPanel__panels",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 260,
+            "y": 113,
+            "w": 1180,
+            "h": 480.5
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "all 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "boxShadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "backdropFilter": "none"
+        },
+        {
+          "tag": "DIV",
+          "text": "Bestsellers\n\nPowdered Meals\n\nGreens & Superfoods\n\nBundles\n\nReady-to-drink Meals\n\nHot Instant Meals\n\nDrinks & Snacks\n\nOfficial Huel Merch",
+          "cls": "tabs-module__jpLcqa__Tabs__panel tabs-module__jpLcqa__Tabs__panel--active",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 260,
+            "y": 113,
+            "w": 1180,
+            "h": 480.5
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "all 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "boxShadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "backdropFilter": "none"
+        },
+        {
+          "tag": "DIV",
+          "text": "Bestsellers\n\nPowdered Meals\n\nGreens & Superfoods\n\nBundles\n\nReady-to-drink Meals\n\nHot Instant Meals\n\nDrinks & Snacks\n\nOfficial Huel Merch",
+          "cls": "desktop-nav-shop-panel-module__CfY33q__DesktopNavShopPanel__content",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 260,
+            "y": 113,
+            "w": 1180,
+            "h": 480.5
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "all 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "boxShadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "backdropFilter": "none"
+        },
+        {
+          "tag": "DIV",
+          "text": "Bestsellers\n\nPowdered Meals\n\nGreens & Superfoods\n\nBundles\n\nReady-to-drink Meals\n\nHot Instant Meals\n\nDrinks & Snacks\n\nOfficial Huel Merch",
+          "cls": "desktop-nav-shop-panel-module__CfY33q__DesktopNavShopPanel__tiles",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 292,
+            "y": 145,
+            "w": 1116,
+            "h": 416.5
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "all 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "boxShadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "backdropFilter": "none"
+        },
+        {
+          "tag": "DIV",
+          "text": "",
+          "cls": "navbar-module__hH2QXG__Navbar__overlay navbar-module__hH2QXG__Navbar__overlay--is-visible",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 0,
+            "y": 113,
+            "w": 1440,
+            "h": 887
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "boxShadow": "none",
+          "background": "oklab(0 0 0 / 0.5)",
+          "backdropFilter": "blur(8px)"
+        },
+        {
+          "tag": "DIV",
+          "text": "Food to fuel your goals\n\nComplete nutrition that supports your body, your goals, and your life.\n\nShop All\n\nLose weight\n\nMore protein\n\nEat healthy\n\nOn-the-go\n\nShop your way\n\nBestsel",
+          "cls": "layout-module__U4d7rq__MainLayoutShell",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 0,
+            "y": 113,
+            "w": 1440,
+            "h": 5775.40625
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "all 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "boxShadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "backdropFilter": "none"
+        },
+        {
+          "tag": "DIV",
+          "text": "Food to fuel your goals\n\nComplete nutrition that supports your body, your goals, and your life.\n\nShop All\n\nLose weight\n\nMore protein\n\nEat healthy\n\nOn-the-go",
+          "cls": "scroll-mt-nav",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 0,
+            "y": 113,
+            "w": 1440,
+            "h": 558.890625
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "all 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "boxShadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "backdropFilter": "none"
+        },
+        {
+          "tag": "SECTION",
+          "text": "Food to fuel your goals\n\nComplete nutrition that supports your body, your goals, and your life.\n\nShop All\n\nLose weight\n\nMore protein\n\nEat healthy\n\nOn-the-go",
+          "cls": "standard-section-module__hs4I8a__StandardSection standard-section-module__hs4I8a__StandardSection--is-left",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 0,
+            "y": 113,
+            "w": 1440,
+            "h": 558.890625
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "all 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "boxShadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "backdropFilter": "none"
+        },
+        {
+          "tag": "DIV",
+          "text": "Lose weight\n\nMore protein\n\nEat healthy\n\nOn-the-go",
+          "cls": "category-tiles-module__Q0-xyq__CategoryTiles",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 0,
+            "y": 337.890625,
+            "w": 1440,
+            "h": 270
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "none 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "boxShadow": "none",
+          "background": "rgba(0, 0, 0, 0)",
+          "backdropFilter": "none"
+        }
+      ],
+      "openAttrs": [
+        {
+          "tag": "BUTTON",
+          "text": "Shop all",
+          "cls": "navbar-module__hH2QXG__Navbar__trigger navbar-module__hH2QXG__Navbar__trigger--is-active",
+          "aria": "true",
+          "dataState": null
+        },
+        {
+          "tag": "DIV",
+          "text": "Shop by Collection\nShop by Goal\nHelp me choose\nShop outlet & save\nShop all\n\nBestsellers\n\nPowdered Meals\n\nGreens & Superf",
+          "cls": "navbar-module__hH2QXG__Navbar__panel navbar-module__hH2QXG__Navbar__panel--is-open",
+          "aria": null,
+          "dataState": null
+        },
+        {
+          "tag": "DIV",
+          "text": "Shop by Collection\nShop by Goal\nHelp me choose\nShop outlet & save\nShop all\n\nBestsellers\n\nPowdered Meals\n\nGreens & Superf",
+          "cls": "navbar-module__hH2QXG__Navbar__panel-item navbar-module__hH2QXG__Navbar__panel-item--is-active",
+          "aria": null,
+          "dataState": null
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Shop by Collection",
+          "cls": "tabs-module__jpLcqa__Tabs__tab desktop-nav-shop-panel-module__CfY33q__DesktopNavShopPanel__tab tabs-module__jpLcqa__Tabs__tab--active desktop-nav-shop-panel-module__CfY33q__DesktopNavShopPanel__tabActive",
+          "aria": null,
+          "dataState": null
+        },
+        {
+          "tag": "DIV",
+          "text": "Bestsellers\n\nPowdered Meals\n\nGreens & Superfoods\n\nBundles\n\nReady-to-drink Meals\n\nHot Instant Meals\n\nDrinks & Snacks\n\nOff",
+          "cls": "tabs-module__jpLcqa__Tabs__panel tabs-module__jpLcqa__Tabs__panel--active",
+          "aria": null,
+          "dataState": null
+        },
+        {
+          "tag": "BUTTON",
+          "text": "Collection",
+          "cls": "mobile-nav-sidebar-module__9e5MQG__MobileNavSidebar__shopBy-pill mobile-nav-sidebar-module__9e5MQG__MobileNavSidebar__shopBy-pill--is-active",
+          "aria": null,
+          "dataState": null
+        },
+        {
+          "tag": "DIV",
+          "text": "Strictly Necessary CookiesAlways Active",
+          "cls": "ot-acc-hdr ot-always-active-group",
+          "aria": null,
+          "dataState": null
+        },
+        {
+          "tag": "DIV",
+          "text": "Always Active",
+          "cls": "ot-always-active",
+          "aria": null,
+          "dataState": null
+        }
+      ]
+    },
+    {
+      "area": "Hero/image card",
+      "trigger": "hover",
+      "before": {
+        "tag": "A",
+        "text": "Bestsellers",
+        "class": "desktop-nav-shop-panel-module__CfY33q__DesktopNavShopPanel__tileLink",
+        "ariaExpanded": null,
+        "dataState": null,
+        "href": "/collections/bestsellers",
+        "src": "https://huel.imgix.net/Bestsellers-Collection-Tile.png?auto=format&compress&w=500",
+        "imgs": [
+          {
+            "src": "https://huel.imgix.net/Bestsellers-Collection-Tile.png?auto=format&compress&w=500",
+            "opacity": "1",
+            "transform": "none",
+            "transition": "all 0s ease",
+            "cls": "image-module__ZYzVpG__Image__image"
+          }
+        ],
+        "rect": {
+          "x": 292,
+          "y": 145,
+          "w": 267,
+          "h": 200.25
+        },
+        "opacity": "1",
+        "transform": "none",
+        "visibility": "visible",
+        "pointerEvents": "auto",
+        "transitionProperty": "all",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "maxHeight": "none",
+        "clipPath": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "overflow": "visible",
+        "animationName": "none",
+        "animationDuration": "0s",
+        "animationPlayState": "running"
+      },
+      "after": {
+        "tag": "A",
+        "text": "Bestsellers",
+        "class": "desktop-nav-shop-panel-module__CfY33q__DesktopNavShopPanel__tileLink",
+        "ariaExpanded": null,
+        "dataState": null,
+        "href": "/collections/bestsellers",
+        "src": "https://huel.imgix.net/Bestsellers-Collection-Tile.png?auto=format&compress&w=500",
+        "imgs": [
+          {
+            "src": "https://huel.imgix.net/Bestsellers-Collection-Tile.png?auto=format&compress&w=500",
+            "opacity": "1",
+            "transform": "none",
+            "transition": "all 0s ease",
+            "cls": "image-module__ZYzVpG__Image__image"
+          }
+        ],
+        "rect": {
+          "x": 292,
+          "y": 145,
+          "w": 267,
+          "h": 200.25
+        },
+        "opacity": "1",
+        "transform": "none",
+        "visibility": "visible",
+        "pointerEvents": "auto",
+        "transitionProperty": "all",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "maxHeight": "none",
+        "clipPath": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "overflow": "visible",
+        "animationName": "none",
+        "animationDuration": "0s",
+        "animationPlayState": "running"
+      },
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-hero-card-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-hero-card-after.png"
+      ]
+    },
+    {
+      "area": "Category pill/link",
+      "trigger": "hover",
+      "before": null,
+      "after": null,
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-category-pill-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-category-pill-after.png"
+      ]
+    },
+    {
+      "area": "Product card",
+      "trigger": "hover",
+      "before": null,
+      "after": null,
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-product-card-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-product-card-after.png"
+      ]
+    },
+    {
+      "area": "Review/carousel candidate",
+      "trigger": "arrow click if found",
+      "clicked": false,
+      "before": {
+        "tag": "DIV",
+        "text": "Complete nutrition27 essential vitamins and mineralsBalanced macrosCarbs, protein, and fats in the right ratiosScientifically supported100+ peer-reviewed studiesProtein for satietyUp to 40g per meal to keep you goingReal",
+        "class": "bento-grid-module__JkTpXG__BentoGrid__carousel",
+        "ariaExpanded": null,
+        "dataState": null,
+        "href": null,
+        "src": "https://cdn.sanity.io/images/sy0wkh9n/productionv29/fad29d1028ab307c2f47a3c60383768581ac12a8-746x852.png?auto=format&fit=max&q=75&w=1200",
+        "imgs": [
+          {
+            "src": "https://cdn.sanity.io/images/sy0wkh9n/productionv29/fad29d1028ab307c2f47a3c60383768581ac12a8-746x852.png?auto=format&fit=max&q=75&w=1200",
+            "opacity": "1",
+            "transform": "none",
+            "transition": "all 0s ease",
+            "cls": "image-module__ZYzVpG__Image__image"
+          },
+          {
+            "src": "https://cdn.sanity.io/images/sy0wkh9n/productionv29/f928f648e662f06f532a47def787abb325b22bf8-1210x728.png?auto=format&fit=max&q=75&w=1200",
+            "opacity": "1",
+            "transform": "none",
+            "transition": "all 0s ease",
+            "cls": "image-module__ZYzVpG__Image__image"
+          },
+          {
+            "src": "https://cdn.sanity.io/images/sy0wkh9n/productionv29/97968f9089085ab9cfdace14d026923b6ac0f94b-605x364.png?auto=format&fit=max&q=75&w=1200",
+            "opacity": "1",
+            "transform": "none",
+            "transition": "all 0s ease",
+            "cls": "image-module__ZYzVpG__Image__image"
+          },
+          {
+            "src": "https://cdn.sanity.io/images/sy0wkh9n/productionv29/14e875e78f4d33e085ac16a9e3463942fdfa126d-476x406.png?auto=format&fit=max&q=75&w=1200",
+            "opacity": "1",
+            "transform": "none",
+            "transition": "all 0s ease",
+            "cls": "image-module__ZYzVpG__Image__image"
+          }
+        ],
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "opacity": "1",
+        "transform": "none",
+        "visibility": "visible",
+        "pointerEvents": "auto",
+        "transitionProperty": "all",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "maxHeight": "none",
+        "clipPath": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "overflow": "visible",
+        "animationName": "none",
+        "animationDuration": "0s",
+        "animationPlayState": "running"
+      },
+      "after": {
+        "tag": "DIV",
+        "text": "Complete nutrition27 essential vitamins and mineralsBalanced macrosCarbs, protein, and fats in the right ratiosScientifically supported100+ peer-reviewed studiesProtein for satietyUp to 40g per meal to keep you goingReal",
+        "class": "bento-grid-module__JkTpXG__BentoGrid__carousel",
+        "ariaExpanded": null,
+        "dataState": null,
+        "href": null,
+        "src": "https://cdn.sanity.io/images/sy0wkh9n/productionv29/fad29d1028ab307c2f47a3c60383768581ac12a8-746x852.png?auto=format&fit=max&q=75&w=1200",
+        "imgs": [
+          {
+            "src": "https://cdn.sanity.io/images/sy0wkh9n/productionv29/fad29d1028ab307c2f47a3c60383768581ac12a8-746x852.png?auto=format&fit=max&q=75&w=1200",
+            "opacity": "1",
+            "transform": "none",
+            "transition": "all 0s ease",
+            "cls": "image-module__ZYzVpG__Image__image"
+          },
+          {
+            "src": "https://cdn.sanity.io/images/sy0wkh9n/productionv29/f928f648e662f06f532a47def787abb325b22bf8-1210x728.png?auto=format&fit=max&q=75&w=1200",
+            "opacity": "1",
+            "transform": "none",
+            "transition": "all 0s ease",
+            "cls": "image-module__ZYzVpG__Image__image"
+          },
+          {
+            "src": "https://cdn.sanity.io/images/sy0wkh9n/productionv29/97968f9089085ab9cfdace14d026923b6ac0f94b-605x364.png?auto=format&fit=max&q=75&w=1200",
+            "opacity": "1",
+            "transform": "none",
+            "transition": "all 0s ease",
+            "cls": "image-module__ZYzVpG__Image__image"
+          },
+          {
+            "src": "https://cdn.sanity.io/images/sy0wkh9n/productionv29/14e875e78f4d33e085ac16a9e3463942fdfa126d-476x406.png?auto=format&fit=max&q=75&w=1200",
+            "opacity": "1",
+            "transform": "none",
+            "transition": "all 0s ease",
+            "cls": "image-module__ZYzVpG__Image__image"
+          }
+        ],
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "opacity": "1",
+        "transform": "none",
+        "visibility": "visible",
+        "pointerEvents": "auto",
+        "transitionProperty": "all",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "maxHeight": "none",
+        "clipPath": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "overflow": "visible",
+        "animationName": "none",
+        "animationDuration": "0s",
+        "animationPlayState": "running"
+      },
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-carousel-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-carousel-after.png"
+      ]
+    },
+    {
+      "area": "Footer link",
+      "trigger": "hover",
+      "before": {
+        "tag": "A",
+        "text": "See our commitments",
+        "class": "button-module__ZL7YPq__Button button-module__ZL7YPq__Button--is-primary button-module__ZL7YPq__Button--is-medium",
+        "ariaExpanded": null,
+        "dataState": null,
+        "href": "/pages/sustainability-page",
+        "src": null,
+        "imgs": [],
+        "rect": {
+          "x": 144,
+          "y": 2607.859375,
+          "w": 181.765625,
+          "h": 32.015625
+        },
+        "opacity": "1",
+        "transform": "none",
+        "visibility": "visible",
+        "pointerEvents": "auto",
+        "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+        "transitionDuration": "0.32s",
+        "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "maxHeight": "none",
+        "clipPath": "none",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "boxShadow": "none",
+        "overflow": "visible",
+        "animationName": "none",
+        "animationDuration": "0s",
+        "animationPlayState": "running"
+      },
+      "after": {
+        "tag": "A",
+        "text": "See our commitments",
+        "class": "button-module__ZL7YPq__Button button-module__ZL7YPq__Button--is-primary button-module__ZL7YPq__Button--is-medium",
+        "ariaExpanded": null,
+        "dataState": null,
+        "href": "/pages/sustainability-page",
+        "src": null,
+        "imgs": [],
+        "rect": {
+          "x": 144,
+          "y": 2607.859375,
+          "w": 181.765625,
+          "h": 32.015625
+        },
+        "opacity": "1",
+        "transform": "none",
+        "visibility": "visible",
+        "pointerEvents": "auto",
+        "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+        "transitionDuration": "0.32s",
+        "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "maxHeight": "none",
+        "clipPath": "none",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "boxShadow": "none",
+        "overflow": "visible",
+        "animationName": "none",
+        "animationDuration": "0s",
+        "animationPlayState": "running"
+      },
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-footer-link-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-footer-link-after.png"
+      ]
+    },
+    {
+      "area": "Mobile menu",
+      "trigger": "click menu button",
+      "didClick": true,
+      "before": {
+        "tag": "BUTTON",
+        "text": "",
+        "class": "navbar-module__hH2QXG__Navbar__menu-button",
+        "ariaExpanded": "false",
+        "dataState": null,
+        "href": null,
+        "src": null,
+        "imgs": [],
+        "rect": {
+          "x": 16,
+          "y": 64,
+          "w": 40,
+          "h": 40
+        },
+        "opacity": "1",
+        "transform": "none",
+        "visibility": "visible",
+        "pointerEvents": "auto",
+        "transitionProperty": "all",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "maxHeight": "none",
+        "clipPath": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "overflow": "visible",
+        "animationName": "none",
+        "animationDuration": "0s",
+        "animationPlayState": "running"
+      },
+      "after": {
+        "tag": "BUTTON",
+        "text": "",
+        "class": "navbar-module__hH2QXG__Navbar__menu-button",
+        "ariaExpanded": "true",
+        "dataState": null,
+        "href": null,
+        "src": null,
+        "imgs": [],
+        "rect": {
+          "x": 16,
+          "y": 64,
+          "w": 40,
+          "h": 40
+        },
+        "opacity": "1",
+        "transform": "none",
+        "visibility": "visible",
+        "pointerEvents": "auto",
+        "transitionProperty": "all",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "maxHeight": "none",
+        "clipPath": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "overflow": "visible",
+        "animationName": "none",
+        "animationDuration": "0s",
+        "animationPlayState": "running"
+      },
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-mobile-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-mobile-menu-open.png"
+      ],
+      "openBits": [
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "cls": "navbar-module__hH2QXG__Navbar__menu-button",
+          "aria": "true",
+          "dataState": null,
+          "rect": {
+            "x": 16,
+            "y": 64,
+            "w": 40,
+            "h": 40
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "all 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto"
+        },
+        {
+          "tag": "UL",
+          "text": "Shop allScienceAboutWhy Huel?Guides & ArticlesGive 25%, Get 25%",
+          "cls": "navbar-module__hH2QXG__Navbar__menu",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "all 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto"
+        },
+        {
+          "tag": "LI",
+          "text": "Shop all",
+          "cls": "navbar-module__hH2QXG__Navbar__menu-item",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "all 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto"
+        },
+        {
+          "tag": "LI",
+          "text": "Science",
+          "cls": "navbar-module__hH2QXG__Navbar__menu-item",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "all 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto"
+        },
+        {
+          "tag": "LI",
+          "text": "About",
+          "cls": "navbar-module__hH2QXG__Navbar__menu-item",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "all 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto"
+        },
+        {
+          "tag": "LI",
+          "text": "Why Huel?",
+          "cls": "navbar-module__hH2QXG__Navbar__menu-item",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "all 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto"
+        },
+        {
+          "tag": "LI",
+          "text": "Guides & Articles",
+          "cls": "navbar-module__hH2QXG__Navbar__menu-item",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "all 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto"
+        },
+        {
+          "tag": "LI",
+          "text": "Give 25%, Get 25%",
+          "cls": "navbar-module__hH2QXG__Navbar__menu-item",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "all 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto"
+        },
+        {
+          "tag": "DIV",
+          "text": "",
+          "cls": "navbar-module__hH2QXG__Navbar__drawer-overlay navbar-module__hH2QXG__Navbar__drawer-overlay--is-open",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 390,
+            "h": 844
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+          "visibility": "visible",
+          "pointerEvents": "auto"
+        },
+        {
+          "tag": "DIV",
+          "text": "US\nCollection\nGoal\n\nBestsellers\n\nPowdered Meals\n\nGreens & Superfoods\n\nBundles\n\nReady-to-drink Meals\n\nHot Instant Meals\n\nDrinks & Snacks\n\nOfficial Huel Merch\n\nSh",
+          "cls": "navbar-module__hH2QXG__Navbar__drawer navbar-module__hH2QXG__Navbar__drawer--is-open",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 390,
+            "h": 844
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "transform, translate, scale, rotate 0.3s cubic-bezier(0, 0, 0.2, 1)",
+          "visibility": "visible",
+          "pointerEvents": "auto"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "cls": "navbar-module__hH2QXG__Navbar__drawer-close",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 334,
+            "y": 8,
+            "w": 40,
+            "h": 40
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+          "visibility": "visible",
+          "pointerEvents": "auto"
+        },
+        {
+          "tag": "DIV",
+          "text": "US\nCollection\nGoal\n\nBestsellers\n\nPowdered Meals\n\nGreens & Superfoods\n\nBundles\n\nReady-to-drink Meals\n\nHot Instant Meals\n\nDrinks & Snacks\n\nOfficial Huel Merch\n\nSh",
+          "cls": "navbar-module__hH2QXG__Navbar__drawer-content",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 390,
+            "h": 844
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "all 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto"
+        },
+        {
+          "tag": "DIV",
+          "text": "",
+          "cls": "navbar-module__hH2QXG__Navbar__drawer-overlay",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 390,
+            "h": 844
+          },
+          "opacity": "0",
+          "transform": "none",
+          "transition": "opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+          "visibility": "hidden",
+          "pointerEvents": "auto"
+        },
+        {
+          "tag": "DIV",
+          "text": "Your Cart\n\nOops! Your cart is empty\n\nShop All\n\nBestsellers\n\nPowdered Meals\n\nBundles\n\nGreens & Superfoods\n\nReady-to-drink Meals\n\nHot Instant Meals\n\nSecure Checko",
+          "cls": "navbar-module__hH2QXG__Navbar__drawer navbar-module__hH2QXG__Navbar__drawer--is-right",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 390,
+            "y": 0,
+            "w": 390,
+            "h": 844
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "transform, translate, scale, rotate 0.3s cubic-bezier(0, 0, 0.2, 1)",
+          "visibility": "visible",
+          "pointerEvents": "auto"
+        },
+        {
+          "tag": "BUTTON",
+          "text": "",
+          "cls": "navbar-module__hH2QXG__Navbar__drawer-close",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 724,
+            "y": 8,
+            "w": 40,
+            "h": 40
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
+          "visibility": "visible",
+          "pointerEvents": "auto"
+        },
+        {
+          "tag": "DIV",
+          "text": "Your Cart\n\nOops! Your cart is empty\n\nShop All\n\nBestsellers\n\nPowdered Meals\n\nBundles\n\nGreens & Superfoods\n\nReady-to-drink Meals\n\nHot Instant Meals\n\nSecure Checko",
+          "cls": "navbar-module__hH2QXG__Navbar__drawer-content",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 390,
+            "y": 0,
+            "w": 390,
+            "h": 844
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "all 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto"
+        },
+        {
+          "tag": "DIV",
+          "text": "Cookie Preference CentreYou can manage which cookies are set on your device by clicking on the different category headings below. Please remember that disabling",
+          "cls": "",
+          "aria": null,
+          "dataState": null,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          },
+          "opacity": "1",
+          "transform": "none",
+          "transition": "all 0s ease",
+          "visibility": "visible",
+          "pointerEvents": "auto"
+        }
+      ],
+      "bodyOverflow": "hidden"
+    },
+    {
+      "area": "Mobile accordion candidate",
+      "trigger": "click",
+      "clicked": true,
+      "before": {
+        "tag": "BUTTON",
+        "text": "Shop all",
+        "class": "navbar-module__hH2QXG__Navbar__trigger",
+        "ariaExpanded": "false",
+        "dataState": null,
+        "href": null,
+        "src": null,
+        "imgs": [],
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "opacity": "1",
+        "transform": "none",
+        "visibility": "visible",
+        "pointerEvents": "auto",
+        "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+        "transitionDuration": "0.2s",
+        "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "maxHeight": "none",
+        "clipPath": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "overflow": "visible",
+        "animationName": "none",
+        "animationDuration": "0s",
+        "animationPlayState": "running"
+      },
+      "after": {
+        "tag": "BUTTON",
+        "text": "Shop all",
+        "class": "navbar-module__hH2QXG__Navbar__trigger",
+        "ariaExpanded": "false",
+        "dataState": null,
+        "href": null,
+        "src": null,
+        "imgs": [],
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 0,
+          "h": 0
+        },
+        "opacity": "1",
+        "transform": "none",
+        "visibility": "visible",
+        "pointerEvents": "auto",
+        "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+        "transitionDuration": "0.2s",
+        "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "maxHeight": "none",
+        "clipPath": "none",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "overflow": "visible",
+        "animationName": "none",
+        "animationDuration": "0s",
+        "animationPlayState": "running"
+      }
+    }
+  ],
+  "title": "Huel",
+  "topInteractive": [
+    {
+      "tag": "BUTTON",
+      "text": "Close",
+      "href": null,
+      "aria": null,
+      "cls": "button-module__ZL7YPq__Button button-module__ZL7YPq__Button--is-primary button-module__ZL7YPq__Button--is-small button-module__ZL7YPq__Button--is-fab"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "South Africa(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Bermuda(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "United States(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Hong Kong(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "India(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Kuwait(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Malaysia(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "New Zealand(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Saudi Arabia(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Singapore(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "South Korea(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Taiwan(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "United Arab Emirates(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "日本(日本語)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Austria(Deutsch)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Austria(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Belgium(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Belgium(Français)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Belgium(Nederlands)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Bulgaria(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Croatia(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Cyprus(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Czech Republic(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Danmark(Dansk)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Deutschland(Deutsch)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "España(Español)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Estonia(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Finland(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Finland(Suomi)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "France(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "France(Français)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Greece(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Hungary(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Iceland(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Ireland(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Isle Of Man(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Italia(Italiano)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Italy(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Latvia(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Lithuania(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Luxembourg(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Malta(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Netherlands(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Netherlands(Nederlands)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Polska(Polski)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Portugal(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Portugal(Português)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Romania(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Slovakia(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Slovenia(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Spain(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Sweden(Svenska)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "Switzerland(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "BUTTON",
+      "text": "United Kingdom(English)",
+      "href": null,
+      "aria": null,
+      "cls": "geolocator-modal-module__upLduq__GeolocatorModal__link"
+    },
+    {
+      "tag": "A",
+      "text": "FREE SHIPPING $65+",
+      "href": "https://huel.com/pages/delivery-questions",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "SUBSCRIBE AND SAVE 20%",
+      "href": "https://huel.com/collections/other-huel-products",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "HSA/FSA ELIGIBLE: LEARN MORE",
+      "href": "https://huel.com/pages/truemed",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "GIVE 25%, GET 25%",
+      "href": "https://huel.com/pages/refer-a-friend",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "FREE SHIPPING $65+",
+      "href": "https://huel.com/pages/delivery-questions",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "SUBSCRIBE AND SAVE 20%",
+      "href": "https://huel.com/collections/other-huel-products",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "HSA/FSA ELIGIBLE: LEARN MORE",
+      "href": "https://huel.com/pages/truemed",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "GIVE 25%, GET 25%",
+      "href": "https://huel.com/pages/refer-a-friend",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "FREE SHIPPING $65+",
+      "href": "https://huel.com/pages/delivery-questions",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "SUBSCRIBE AND SAVE 20%",
+      "href": "https://huel.com/collections/other-huel-products",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "HSA/FSA ELIGIBLE: LEARN MORE",
+      "href": "https://huel.com/pages/truemed",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "GIVE 25%, GET 25%",
+      "href": "https://huel.com/pages/refer-a-friend",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "FREE SHIPPING $65+",
+      "href": "https://huel.com/pages/delivery-questions",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "SUBSCRIBE AND SAVE 20%",
+      "href": "https://huel.com/collections/other-huel-products",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "HSA/FSA ELIGIBLE: LEARN MORE",
+      "href": "https://huel.com/pages/truemed",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "GIVE 25%, GET 25%",
+      "href": "https://huel.com/pages/refer-a-friend",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "FREE SHIPPING $65+",
+      "href": "https://huel.com/pages/delivery-questions",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "SUBSCRIBE AND SAVE 20%",
+      "href": "https://huel.com/collections/other-huel-products",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "HSA/FSA ELIGIBLE: LEARN MORE",
+      "href": "https://huel.com/pages/truemed",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "GIVE 25%, GET 25%",
+      "href": "https://huel.com/pages/refer-a-friend",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "FREE SHIPPING $65+",
+      "href": "https://huel.com/pages/delivery-questions",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "SUBSCRIBE AND SAVE 20%",
+      "href": "https://huel.com/collections/other-huel-products",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "HSA/FSA ELIGIBLE: LEARN MORE",
+      "href": "https://huel.com/pages/truemed",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "GIVE 25%, GET 25%",
+      "href": "https://huel.com/pages/refer-a-friend",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "FREE SHIPPING $65+",
+      "href": "https://huel.com/pages/delivery-questions",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "SUBSCRIBE AND SAVE 20%",
+      "href": "https://huel.com/collections/other-huel-products",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "HSA/FSA ELIGIBLE: LEARN MORE",
+      "href": "https://huel.com/pages/truemed",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "GIVE 25%, GET 25%",
+      "href": "https://huel.com/pages/refer-a-friend",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "FREE SHIPPING $65+",
+      "href": "https://huel.com/pages/delivery-questions",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "SUBSCRIBE AND SAVE 20%",
+      "href": "https://huel.com/collections/other-huel-products",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "HSA/FSA ELIGIBLE: LEARN MORE",
+      "href": "https://huel.com/pages/truemed",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "GIVE 25%, GET 25%",
+      "href": "https://huel.com/pages/refer-a-friend",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "FREE SHIPPING $65+",
+      "href": "https://huel.com/pages/delivery-questions",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "SUBSCRIBE AND SAVE 20%",
+      "href": "https://huel.com/collections/other-huel-products",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    },
+    {
+      "tag": "A",
+      "text": "HSA/FSA ELIGIBLE: LEARN MORE",
+      "href": "https://huel.com/pages/truemed",
+      "aria": null,
+      "cls": "ticker-module__UtJsEG__Ticker__item-link"
+    }
+  ],
+  "escapeOpenCount": 1
+}

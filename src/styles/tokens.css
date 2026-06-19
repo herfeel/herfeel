@@ -1,0 +1,50 @@
+:root {
+  --color-ink: #0c0c0d;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-surface: #f5f2ec;
+  --color-border: #e7e1d8;
+  --color-muted: #6e6e6e;
+  --color-green: #46be6a;
+  --color-green-soft: #c7f1c5;
+  --color-orange: #ff8a00;
+  --color-warning-soft: #f7e7a8;
+
+  --font-sans: "Suisse Intl", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Suisse Works", Georgia, "Times New Roman", serif;
+  --font-mono: "Suisse Intl Mono", "IBM Plex Mono", monospace;
+
+  --text-hero: 54px;
+  --text-section: 54px;
+  --text-footer-lg: 42px;
+  --text-card-title: 18px;
+  --text-body: 16px;
+  --text-nav: 13px;
+  --text-meta: 12px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 9999px;
+
+  --shadow-menu: 0 18px 60px rgb(0 0 0 / 0.14);
+  --shadow-modal: 0 24px 80px rgb(0 0 0 / 0.22);
+  --shadow-card: 0 8px 24px rgb(0 0 0 / 0.08);
+
+  --container: 1280px;
+  --gutter-desktop: 48px;
+  --gutter-tablet: 32px;
+  --gutter-mobile: 16px;
+}

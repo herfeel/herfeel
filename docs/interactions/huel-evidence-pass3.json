@@ -1,0 +1,62 @@
+{
+  "method": "CDP pass3 fixed style dumper",
+  "interactions": [
+    {
+      "area": "Hero Cards",
+      "trigger": "hover",
+      "before": {
+        "error": "SyntaxError: Invalid regular expression: /→|›|+/: Nothing to repeat"
+      },
+      "after": {
+        "error": "SyntaxError: Invalid regular expression: /→|›|+/: Nothing to repeat"
+      },
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-hero-cards-pass3-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-hero-cards-pass3-after.png"
+      ]
+    },
+    {
+      "area": "Category Pills",
+      "trigger": "hover",
+      "before": {
+        "error": "SyntaxError: Invalid regular expression: /→|›|+/: Nothing to repeat"
+      },
+      "after": {
+        "error": "SyntaxError: Invalid regular expression: /→|›|+/: Nothing to repeat"
+      },
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-category-pills-pass3-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-category-pills-pass3-after.png"
+      ]
+    },
+    {
+      "area": "Product Cards / Bestsellers",
+      "trigger": "hover",
+      "before": {
+        "error": "SyntaxError: Invalid regular expression: /→|›|+/: Nothing to repeat"
+      },
+      "after": {
+        "error": "SyntaxError: Invalid regular expression: /→|›|+/: Nothing to repeat"
+      },
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-product-cards-bestsellers-pass3-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-product-cards-bestsellers-pass3-after.png"
+      ]
+    },
+    {
+      "area": "Bento / Why Huel Works",
+      "trigger": "hover",
+      "before": {
+        "error": "SyntaxError: Invalid regular expression: /→|›|+/: Nothing to repeat"
+      },
+      "after": {
+        "error": "SyntaxError: Invalid regular expression: /→|›|+/: Nothing to repeat"
+      },
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-bento-why-huel-works-pass3-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-bento-why-huel-works-pass3-after.png"
+      ]
+    }
+  ],
+  "productFound": null
+}

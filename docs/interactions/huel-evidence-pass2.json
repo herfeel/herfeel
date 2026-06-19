@@ -1,0 +1,62 @@
+{
+  "method": "CDP pass2 focused visible Home targets",
+  "interactions": [
+    {
+      "area": "Hero Cards",
+      "trigger": "hover first visible goal card",
+      "before": {
+        "error": "Uncaught"
+      },
+      "after": {
+        "error": "Uncaught"
+      },
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-hero-real-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-hero-real-after.png"
+      ]
+    },
+    {
+      "area": "Category Pills",
+      "trigger": "hover visible pill",
+      "before": {
+        "error": "Uncaught"
+      },
+      "after": {
+        "error": "Uncaught"
+      },
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-category-pill-real-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-category-pill-real-after.png"
+      ]
+    },
+    {
+      "area": "Product Cards / Bestsellers",
+      "trigger": "hover first visible product-like card",
+      "found": null,
+      "before": {
+        "error": "Uncaught"
+      },
+      "after": {
+        "error": "Uncaught"
+      },
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-product-card-real-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-product-card-real-after.png"
+      ]
+    },
+    {
+      "area": "Bento / Why Huel Works",
+      "trigger": "hover card/container candidate",
+      "before": {
+        "error": "Uncaught"
+      },
+      "after": {
+        "error": "Uncaught"
+      },
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-bento-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-bento-after.png"
+      ]
+    }
+  ]
+}

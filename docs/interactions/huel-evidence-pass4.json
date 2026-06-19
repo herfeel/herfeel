@@ -1,0 +1,35 @@
+{
+  "method": "CDP pass4 fixed candidates",
+  "interactions": [
+    {
+      "area": "Hero Cards",
+      "trigger": "hover",
+      "before": null,
+      "after": null,
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-hero-cards-pass4-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-hero-cards-pass4-after.png"
+      ]
+    },
+    {
+      "area": "Category Pills",
+      "trigger": "hover",
+      "before": null,
+      "after": null,
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-category-pills-pass4-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-category-pills-pass4-after.png"
+      ]
+    },
+    {
+      "area": "Bento / Why Huel Works",
+      "trigger": "hover",
+      "before": null,
+      "after": null,
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-bento-why-huel-works-pass4-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-bento-why-huel-works-pass4-after.png"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,543 @@
+{
+  "method": "CDP pass6 removed newsletter modal after observing it",
+  "interactions": [
+    {
+      "area": "Hero Cards",
+      "trigger": "hover first card coordinate",
+      "before": {
+        "tag": "A",
+        "text": "Lose weight",
+        "class": "",
+        "href": "/collections/weight-loss",
+        "ariaExpanded": null,
+        "rect": {
+          "x": 144,
+          "y": 337.890625,
+          "w": 270,
+          "h": 270
+        },
+        "opacity": "1",
+        "transform": "none",
+        "transitionProperty": "all",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "background": "rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "filter": "none",
+        "overflow": "visible",
+        "imgs": [
+          {
+            "tag": "IMG",
+            "text": "",
+            "class": "image-module__ZYzVpG__Image__image",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 145,
+              "y": 338.890625,
+              "w": 268,
+              "h": 268
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "clip",
+            "src": "https://huel.imgix.net/US-Manage-weight-BERTD.jpg?auto=format&compress&w=500"
+          }
+        ],
+        "candidates": [
+          {
+            "tag": "DIV",
+            "text": "",
+            "class": "image-tile-module__1BMErq__ImageTile__action-icons",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 117,
+              "y": 564.890625,
+              "w": 80,
+              "h": 20
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "transform, translate, scale, rotate",
+            "transitionDuration": "0.3s",
+            "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "SPAN",
+            "text": "",
+            "class": "icon-module__rIYjgq__Icon",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 127,
+              "y": 564.890625,
+              "w": 20,
+              "h": 20
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "SPAN",
+            "text": "",
+            "class": "icon-module__rIYjgq__Icon",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 167,
+              "y": 564.890625,
+              "w": 20,
+              "h": 20
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          }
+        ],
+        "children": [
+          {
+            "tag": "DIV",
+            "text": "Lose weight",
+            "class": "image-tile-module__1BMErq__ImageTile image-tile-module__1BMErq__ImageTile--is-cover",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 144,
+              "y": 337.890625,
+              "w": 270,
+              "h": 270
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          }
+        ]
+      },
+      "after": {
+        "tag": "A",
+        "text": "Lose weight",
+        "class": "",
+        "href": "/collections/weight-loss",
+        "ariaExpanded": null,
+        "rect": {
+          "x": 144,
+          "y": 337.890625,
+          "w": 270,
+          "h": 270
+        },
+        "opacity": "1",
+        "transform": "none",
+        "transitionProperty": "all",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "background": "rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "filter": "none",
+        "overflow": "visible",
+        "imgs": [
+          {
+            "tag": "IMG",
+            "text": "",
+            "class": "image-module__ZYzVpG__Image__image",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 131.59999084472656,
+              "y": 312.0906066894531,
+              "w": 294.800048828125,
+              "h": 294.8000183105469
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "clip",
+            "src": "https://huel.imgix.net/US-Manage-weight-BERTD.jpg?auto=format&compress&w=500"
+          }
+        ],
+        "candidates": [
+          {
+            "tag": "DIV",
+            "text": "",
+            "class": "image-tile-module__1BMErq__ImageTile__action-icons",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 157,
+              "y": 564.890625,
+              "w": 80,
+              "h": 20
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "transform, translate, scale, rotate",
+            "transitionDuration": "0.3s",
+            "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "SPAN",
+            "text": "",
+            "class": "icon-module__rIYjgq__Icon",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 167,
+              "y": 564.890625,
+              "w": 20,
+              "h": 20
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "SPAN",
+            "text": "",
+            "class": "icon-module__rIYjgq__Icon",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 207,
+              "y": 564.890625,
+              "w": 20,
+              "h": 20
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          }
+        ],
+        "children": [
+          {
+            "tag": "DIV",
+            "text": "Lose weight",
+            "class": "image-tile-module__1BMErq__ImageTile image-tile-module__1BMErq__ImageTile--is-cover",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 144,
+              "y": 337.890625,
+              "w": 270,
+              "h": 270
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          }
+        ]
+      },
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-hero-coordinate-clean-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-hero-coordinate-clean-after.png"
+      ]
+    },
+    {
+      "area": "Category Pills",
+      "trigger": "hover first pill coordinate",
+      "before": {
+        "tag": "A",
+        "text": "Bestsellers",
+        "class": "",
+        "href": "/collections/bestsellers",
+        "ariaExpanded": null,
+        "rect": {
+          "x": 144,
+          "y": 212.375,
+          "w": 368,
+          "h": 86
+        },
+        "opacity": "1",
+        "transform": "none",
+        "transitionProperty": "all",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "background": "rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "filter": "none",
+        "overflow": "visible",
+        "imgs": [
+          {
+            "tag": "IMG",
+            "text": "",
+            "class": "image-module__ZYzVpG__Image__image",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 153,
+              "y": 221.375,
+              "w": 68,
+              "h": 68
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "clip",
+            "src": "https://huel.imgix.net/Bestsellers-Collection-Tile.png?auto=format&compress&w=100"
+          }
+        ],
+        "candidates": [
+          {
+            "tag": "SPAN",
+            "text": "",
+            "class": "image-pill-module__NqfVYa__ImagePill__action-icon",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 465,
+              "y": 245.375,
+              "w": 20,
+              "h": 20
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "transform, translate, scale, rotate",
+            "transitionDuration": "0.3s",
+            "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "SPAN",
+            "text": "",
+            "class": "icon-module__rIYjgq__Icon",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 465,
+              "y": 245.375,
+              "w": 20,
+              "h": 20
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          }
+        ],
+        "children": [
+          {
+            "tag": "DIV",
+            "text": "Bestsellers",
+            "class": "image-pill-module__NqfVYa__ImagePill",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 144,
+              "y": 212.375,
+              "w": 368,
+              "h": 86
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events",
+            "transitionDuration": "0.15s",
+            "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+            "background": "rgb(245, 242, 236)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "hidden"
+          }
+        ]
+      },
+      "after": {
+        "tag": "A",
+        "text": "Bestsellers",
+        "class": "",
+        "href": "/collections/bestsellers",
+        "ariaExpanded": null,
+        "rect": {
+          "x": 144,
+          "y": 212.375,
+          "w": 368,
+          "h": 86
+        },
+        "opacity": "1",
+        "transform": "none",
+        "transitionProperty": "all",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "background": "rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "filter": "none",
+        "overflow": "visible",
+        "imgs": [
+          {
+            "tag": "IMG",
+            "text": "",
+            "class": "image-module__ZYzVpG__Image__image",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 150.375,
+              "y": 220.86500549316406,
+              "w": 69.02000427246094,
+              "h": 69.02000427246094
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "clip",
+            "src": "https://huel.imgix.net/Bestsellers-Collection-Tile.png?auto=format&compress&w=100"
+          }
+        ],
+        "candidates": [
+          {
+            "tag": "SPAN",
+            "text": "",
+            "class": "image-pill-module__NqfVYa__ImagePill__action-icon",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 467.05499267578125,
+              "y": 245.22500610351562,
+              "w": 20.29998779296875,
+              "h": 20.29998779296875
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "transform, translate, scale, rotate",
+            "transitionDuration": "0.3s",
+            "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "SPAN",
+            "text": "",
+            "class": "icon-module__rIYjgq__Icon",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 467.05499267578125,
+              "y": 245.22500610351562,
+              "w": 20.29998779296875,
+              "h": 20.29998779296875
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          }
+        ],
+        "children": [
+          {
+            "tag": "DIV",
+            "text": "Bestsellers",
+            "class": "image-pill-module__NqfVYa__ImagePill",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 141.24000549316406,
+              "y": 211.72999572753906,
+              "w": 373.52001953125,
+              "h": 87.29002380371094
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events",
+            "transitionDuration": "0.15s",
+            "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+            "background": "rgb(245, 242, 236)",
+            "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px",
+            "filter": "none",
+            "overflow": "hidden"
+          }
+        ]
+      },
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-category-coordinate-clean-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-category-coordinate-clean-after.png"
+      ]
+    },
+    {
+      "area": "Bento / Why Huel Works",
+      "trigger": "hover card coordinate",
+      "before": null,
+      "after": null,
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-bento-coordinate-clean-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-bento-coordinate-clean-after.png"
+      ]
+    }
+  ]
+}

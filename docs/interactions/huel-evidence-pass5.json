@@ -1,0 +1,1073 @@
+{
+  "method": "CDP pass5 coordinate elementFromPoint",
+  "interactions": [
+    {
+      "area": "Hero Cards",
+      "trigger": "hover coordinate first card",
+      "before": {
+        "tag": "DIV",
+        "text": "",
+        "class": "image-tile-module__1BMErq__ImageTile__image",
+        "href": null,
+        "ariaExpanded": null,
+        "rect": {
+          "x": 145,
+          "y": 338.890625,
+          "w": 268,
+          "h": 268
+        },
+        "opacity": "1",
+        "transform": "none",
+        "transitionProperty": "transform, translate, scale, rotate",
+        "transitionDuration": "0.3s",
+        "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "background": "rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "filter": "none",
+        "overflow": "visible",
+        "imgs": [
+          {
+            "tag": "IMG",
+            "text": "",
+            "class": "image-module__ZYzVpG__Image__image",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 145,
+              "y": 338.890625,
+              "w": 268,
+              "h": 268
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "clip",
+            "src": "https://huel.imgix.net/US-Manage-weight-BERTD.jpg?auto=format&compress&w=500"
+          }
+        ],
+        "candidates": [],
+        "children": [
+          {
+            "tag": "PICTURE",
+            "text": "",
+            "class": "image-module__ZYzVpG__Image",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 145,
+              "y": 338.890625,
+              "w": 268,
+              "h": 268
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          }
+        ]
+      },
+      "after": {
+        "tag": "DIV",
+        "text": "",
+        "class": "image-tile-module__1BMErq__ImageTile__image",
+        "href": null,
+        "ariaExpanded": null,
+        "rect": {
+          "x": 131.59999084472656,
+          "y": 312.0906066894531,
+          "w": 294.800048828125,
+          "h": 294.8000183105469
+        },
+        "opacity": "1",
+        "transform": "none",
+        "transitionProperty": "transform, translate, scale, rotate",
+        "transitionDuration": "0.3s",
+        "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "background": "rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "filter": "none",
+        "overflow": "visible",
+        "imgs": [
+          {
+            "tag": "IMG",
+            "text": "",
+            "class": "image-module__ZYzVpG__Image__image",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 131.59999084472656,
+              "y": 312.0906066894531,
+              "w": 294.800048828125,
+              "h": 294.8000183105469
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "clip",
+            "src": "https://huel.imgix.net/US-Manage-weight-BERTD.jpg?auto=format&compress&w=500"
+          }
+        ],
+        "candidates": [],
+        "children": [
+          {
+            "tag": "PICTURE",
+            "text": "",
+            "class": "image-module__ZYzVpG__Image",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 131.59999084472656,
+              "y": 312.0906066894531,
+              "w": 294.800048828125,
+              "h": 294.8000183105469
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          }
+        ]
+      },
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-hero-coordinate-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-hero-coordinate-after.png"
+      ]
+    },
+    {
+      "area": "Category Pills",
+      "trigger": "hover coordinate first pill",
+      "before": {
+        "tag": "DIV",
+        "text": "Get 15% off your first order\n\nSign up and get 15% off your first $50 Huel order.\n\n\nEmail *\nPhone number\n+1\nSign up\n\nThis site is protected b",
+        "class": "marketing-sign-up-modal-module__0ESYGW__MarketingSignUpModal__content",
+        "href": null,
+        "ariaExpanded": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 1000
+        },
+        "opacity": "1",
+        "transform": "none",
+        "transitionProperty": "all",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "background": "rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "filter": "none",
+        "overflow": "visible",
+        "imgs": [],
+        "candidates": [
+          {
+            "tag": "DIV",
+            "text": "Get 15% off your first order\n\nSign up and get 15% off your first $50 Huel order.\n\n\nEmail *\nPhone number\n+1\nSign up\n\nThis site is protected b",
+            "class": "marketing-sign-up-modal-module__0ESYGW__MarketingSignUpModal__card",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 438,
+              "y": 189.203125,
+              "w": 564,
+              "h": 621.578125
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "text": "Phone number\n+1",
+            "class": "form-field-module__B-VrWW__FormField",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 470,
+              "y": 494.015625,
+              "w": 500,
+              "h": 67.59375
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "text": "+1",
+            "class": "phone-input-module__fYPoFq__PhoneInput phone-input-module__fYPoFq__PhoneInput--is-medium",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 470,
+              "y": 521.609375,
+              "w": 500,
+              "h": 40
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "text": "+1",
+            "class": "phone-input-module__fYPoFq__PhoneInput__wrapper",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 470,
+              "y": 521.609375,
+              "w": 500,
+              "h": 40
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "SPAN",
+            "text": "+1",
+            "class": "",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "text": "+1",
+            "class": "iti iti--input-container iti--has-country-selector iti--show-flags iti--inline-country-selector",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 470,
+              "y": 521.609375,
+              "w": 500,
+              "h": 40
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+            "transitionDuration": "0.15s",
+            "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+            "background": "rgb(255, 255, 255)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "text": "+1",
+            "class": "iti__country-container",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 471,
+              "y": 522.609375,
+              "w": 71.65625,
+              "h": 38
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "+1",
+            "class": "iti__selected-country",
+            "href": null,
+            "ariaExpanded": "false",
+            "rect": {
+              "x": 472,
+              "y": 523.609375,
+              "w": 69.65625,
+              "h": 36
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          }
+        ],
+        "children": [
+          {
+            "tag": "DIV",
+            "text": "Get 15% off your first order\n\nSign up and get 15% off your first $50 Huel order.\n\n\nEmail *\nPhone number\n+1\nSign up\n\nThis site is protected b",
+            "class": "marketing-sign-up-modal-module__0ESYGW__MarketingSignUpModal__card",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 438,
+              "y": 189.203125,
+              "w": 564,
+              "h": 621.578125
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          }
+        ]
+      },
+      "after": {
+        "tag": "DIV",
+        "text": "Get 15% off your first order\n\nSign up and get 15% off your first $50 Huel order.\n\n\nEmail *\nPhone number\n+1\nSign up\n\nThis site is protected b",
+        "class": "marketing-sign-up-modal-module__0ESYGW__MarketingSignUpModal__content",
+        "href": null,
+        "ariaExpanded": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 1000
+        },
+        "opacity": "1",
+        "transform": "none",
+        "transitionProperty": "all",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "background": "rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "filter": "none",
+        "overflow": "visible",
+        "imgs": [],
+        "candidates": [
+          {
+            "tag": "DIV",
+            "text": "Get 15% off your first order\n\nSign up and get 15% off your first $50 Huel order.\n\n\nEmail *\nPhone number\n+1\nSign up\n\nThis site is protected b",
+            "class": "marketing-sign-up-modal-module__0ESYGW__MarketingSignUpModal__card",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 438,
+              "y": 189.203125,
+              "w": 564,
+              "h": 621.578125
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "text": "Phone number\n+1",
+            "class": "form-field-module__B-VrWW__FormField",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 470,
+              "y": 494.015625,
+              "w": 500,
+              "h": 67.59375
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "text": "+1",
+            "class": "phone-input-module__fYPoFq__PhoneInput phone-input-module__fYPoFq__PhoneInput--is-medium",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 470,
+              "y": 521.609375,
+              "w": 500,
+              "h": 40
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "text": "+1",
+            "class": "phone-input-module__fYPoFq__PhoneInput__wrapper",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 470,
+              "y": 521.609375,
+              "w": 500,
+              "h": 40
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "SPAN",
+            "text": "+1",
+            "class": "",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "text": "+1",
+            "class": "iti iti--input-container iti--has-country-selector iti--show-flags iti--inline-country-selector",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 470,
+              "y": 521.609375,
+              "w": 500,
+              "h": 40
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+            "transitionDuration": "0.15s",
+            "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+            "background": "rgb(255, 255, 255)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "text": "+1",
+            "class": "iti__country-container",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 471,
+              "y": 522.609375,
+              "w": 71.65625,
+              "h": 38
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "+1",
+            "class": "iti__selected-country",
+            "href": null,
+            "ariaExpanded": "false",
+            "rect": {
+              "x": 472,
+              "y": 523.609375,
+              "w": 69.65625,
+              "h": 36
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          }
+        ],
+        "children": [
+          {
+            "tag": "DIV",
+            "text": "Get 15% off your first order\n\nSign up and get 15% off your first $50 Huel order.\n\n\nEmail *\nPhone number\n+1\nSign up\n\nThis site is protected b",
+            "class": "marketing-sign-up-modal-module__0ESYGW__MarketingSignUpModal__card",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 438,
+              "y": 189.203125,
+              "w": 564,
+              "h": 621.578125
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          }
+        ]
+      },
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-category-coordinate-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-category-coordinate-after.png"
+      ]
+    },
+    {
+      "area": "Bento / Why Huel Works",
+      "trigger": "hover coordinate card",
+      "before": {
+        "tag": "DIV",
+        "text": "Get 15% off your first order\n\nSign up and get 15% off your first $50 Huel order.\n\n\nEmail *\nPhone number\n+1\nSign up\n\nThis site is protected b",
+        "class": "marketing-sign-up-modal-module__0ESYGW__MarketingSignUpModal__content",
+        "href": null,
+        "ariaExpanded": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 1000
+        },
+        "opacity": "1",
+        "transform": "none",
+        "transitionProperty": "all",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "background": "rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "filter": "none",
+        "overflow": "visible",
+        "imgs": [],
+        "candidates": [
+          {
+            "tag": "DIV",
+            "text": "Get 15% off your first order\n\nSign up and get 15% off your first $50 Huel order.\n\n\nEmail *\nPhone number\n+1\nSign up\n\nThis site is protected b",
+            "class": "marketing-sign-up-modal-module__0ESYGW__MarketingSignUpModal__card",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 438,
+              "y": 189.203125,
+              "w": 564,
+              "h": 621.578125
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "text": "Phone number\n+1",
+            "class": "form-field-module__B-VrWW__FormField",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 470,
+              "y": 494.015625,
+              "w": 500,
+              "h": 67.59375
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "text": "+1",
+            "class": "phone-input-module__fYPoFq__PhoneInput phone-input-module__fYPoFq__PhoneInput--is-medium",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 470,
+              "y": 521.609375,
+              "w": 500,
+              "h": 40
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "text": "+1",
+            "class": "phone-input-module__fYPoFq__PhoneInput__wrapper",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 470,
+              "y": 521.609375,
+              "w": 500,
+              "h": 40
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "SPAN",
+            "text": "+1",
+            "class": "",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "text": "+1",
+            "class": "iti iti--input-container iti--has-country-selector iti--show-flags iti--inline-country-selector",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 470,
+              "y": 521.609375,
+              "w": 500,
+              "h": 40
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+            "transitionDuration": "0.15s",
+            "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+            "background": "rgb(255, 255, 255)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "text": "+1",
+            "class": "iti__country-container",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 471,
+              "y": 522.609375,
+              "w": 71.65625,
+              "h": 38
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "+1",
+            "class": "iti__selected-country",
+            "href": null,
+            "ariaExpanded": "false",
+            "rect": {
+              "x": 472,
+              "y": 523.609375,
+              "w": 69.65625,
+              "h": 36
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          }
+        ],
+        "children": [
+          {
+            "tag": "DIV",
+            "text": "Get 15% off your first order\n\nSign up and get 15% off your first $50 Huel order.\n\n\nEmail *\nPhone number\n+1\nSign up\n\nThis site is protected b",
+            "class": "marketing-sign-up-modal-module__0ESYGW__MarketingSignUpModal__card",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 438,
+              "y": 189.203125,
+              "w": 564,
+              "h": 621.578125
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          }
+        ]
+      },
+      "after": {
+        "tag": "DIV",
+        "text": "Get 15% off your first order\n\nSign up and get 15% off your first $50 Huel order.\n\n\nEmail *\nPhone number\n+1\nSign up\n\nThis site is protected b",
+        "class": "marketing-sign-up-modal-module__0ESYGW__MarketingSignUpModal__content",
+        "href": null,
+        "ariaExpanded": null,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 1000
+        },
+        "opacity": "1",
+        "transform": "none",
+        "transitionProperty": "all",
+        "transitionDuration": "0s",
+        "transitionTimingFunction": "ease",
+        "background": "rgba(0, 0, 0, 0)",
+        "boxShadow": "none",
+        "filter": "none",
+        "overflow": "visible",
+        "imgs": [],
+        "candidates": [
+          {
+            "tag": "DIV",
+            "text": "Get 15% off your first order\n\nSign up and get 15% off your first $50 Huel order.\n\n\nEmail *\nPhone number\n+1\nSign up\n\nThis site is protected b",
+            "class": "marketing-sign-up-modal-module__0ESYGW__MarketingSignUpModal__card",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 438,
+              "y": 189.203125,
+              "w": 564,
+              "h": 621.578125
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "text": "Phone number\n+1",
+            "class": "form-field-module__B-VrWW__FormField",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 470,
+              "y": 494.015625,
+              "w": 500,
+              "h": 67.59375
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "text": "+1",
+            "class": "phone-input-module__fYPoFq__PhoneInput phone-input-module__fYPoFq__PhoneInput--is-medium",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 470,
+              "y": 521.609375,
+              "w": 500,
+              "h": 40
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "text": "+1",
+            "class": "phone-input-module__fYPoFq__PhoneInput__wrapper",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 470,
+              "y": 521.609375,
+              "w": 500,
+              "h": 40
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "SPAN",
+            "text": "+1",
+            "class": "",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 0,
+              "h": 0
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "text": "+1",
+            "class": "iti iti--input-container iti--has-country-selector iti--show-flags iti--inline-country-selector",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 470,
+              "y": 521.609375,
+              "w": 500,
+              "h": 40
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to",
+            "transitionDuration": "0.15s",
+            "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+            "background": "rgb(255, 255, 255)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "text": "+1",
+            "class": "iti__country-container",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 471,
+              "y": 522.609375,
+              "w": 71.65625,
+              "h": 38
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          },
+          {
+            "tag": "BUTTON",
+            "text": "+1",
+            "class": "iti__selected-country",
+            "href": null,
+            "ariaExpanded": "false",
+            "rect": {
+              "x": 472,
+              "y": 523.609375,
+              "w": 69.65625,
+              "h": 36
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          }
+        ],
+        "children": [
+          {
+            "tag": "DIV",
+            "text": "Get 15% off your first order\n\nSign up and get 15% off your first $50 Huel order.\n\n\nEmail *\nPhone number\n+1\nSign up\n\nThis site is protected b",
+            "class": "marketing-sign-up-modal-module__0ESYGW__MarketingSignUpModal__card",
+            "href": null,
+            "ariaExpanded": null,
+            "rect": {
+              "x": 438,
+              "y": 189.203125,
+              "w": 564,
+              "h": 621.578125
+            },
+            "opacity": "1",
+            "transform": "none",
+            "transitionProperty": "all",
+            "transitionDuration": "0s",
+            "transitionTimingFunction": "ease",
+            "background": "rgba(0, 0, 0, 0)",
+            "boxShadow": "none",
+            "filter": "none",
+            "overflow": "visible"
+          }
+        ]
+      },
+      "screenshots": [
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-bento-coordinate-before.png",
+        "/Users/nguyentanluc/tanlucdev/playah/docs/interactions/screenshots/huel-bento-coordinate-after.png"
+      ]
+    }
+  ]
+}
