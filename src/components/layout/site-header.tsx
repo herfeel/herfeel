@@ -344,7 +344,7 @@ function MegaMenuLink({ item }: { item: ShopNavigationItem }) {
 
   return (
     <NavigationMenu.Link asChild>
-      <Link href={item.href} className={`group relative grid min-h-[142px] overflow-hidden rounded-[8px] border border-black/5 p-4 transition-[box-shadow,transform,border-color] duration-200 hover:-translate-y-0.5 hover:border-black/10 hover:shadow-[0_12px_28px_rgb(0_0_0/0.10)] xl:min-h-[194px] ${dark ? "text-white" : "text-[var(--color-ink)]"}`} style={{ background: surface }}>
+      <Link href={item.href} className={`group relative grid min-h-[143px] overflow-hidden rounded-[8px] border border-black/5 p-4 transition-[box-shadow,transform,border-color] duration-200 hover:-translate-y-0.5 hover:border-black/10 hover:shadow-[0_12px_28px_rgb(0_0_0/0.10)] xl:min-h-[194px] ${dark ? "text-white" : "text-[var(--color-ink)]"}`} style={{ background: surface }}>
         <span className={`pointer-events-none absolute inset-0 z-[1] ${dark ? "bg-[linear-gradient(90deg,rgb(0_0_0/0.58)_0%,rgb(0_0_0/0.24)_42%,rgb(0_0_0/0)_76%)]" : "bg-[linear-gradient(90deg,rgb(255_255_255/0.82)_0%,rgb(255_255_255/0.48)_38%,rgb(255_255_255/0)_72%)]"}`} />
         <span className="relative z-[2] max-w-[44%] xl:max-w-[42%]">
           <span className="flex flex-wrap items-center gap-2">
