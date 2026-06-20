@@ -1,17 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check, PackageCheck, Plus } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import {
   benefits,
   celebrities,
+  homeBuildKit,
   heroCards,
-  promoStories,
   shortcutPills,
   trustCards,
 } from "@/data/mock/home";
+import { playKitSteps } from "@/data/mock/play-kit";
 import { mockProducts } from "@/data/mock/products";
 import { ProductCardActions } from "@/features/products/components/product-card-actions";
 import type { Product } from "@/features/products/product-types";
@@ -31,7 +32,7 @@ export function HomePage() {
       <BenefitsBand />
       <TrustBentoSection />
       <ReviewsSection />
-      <PromoStories />
+      <BuildKitTeaser />
       <BestsellersSection />
     </>
   );
@@ -44,31 +45,49 @@ function HeroSection() {
         <HeroReveal className="mb-8 flex flex-col items-start justify-between gap-6 md:mb-16 md:flex-row md:items-end">
           <div>
             <RevealItem>
-              <h1 className="max-w-[760px] text-[34px] font-semibold leading-[1.08] tracking-normal md:text-[54px] md:leading-[1.08]">
+              <h1 className="max-w-[315px] text-[32px] font-semibold leading-[1.08] tracking-normal sm:max-w-[760px] sm:text-[34px] md:text-[54px] md:leading-[1.08]">
                 Chọn đúng <em className="font-serif font-normal italic">cảm giác</em> bạn muốn
               </h1>
             </RevealItem>
             <RevealItem>
-              <p className="mt-3 max-w-[560px] text-base leading-snug text-[var(--color-ink)] md:text-[17px]">
-                Khám phá bao cao su, gel bôi trơn và sản phẩm chăm sóc chính hãng — được chọn theo nhu cầu, giao hàng kín đáo.
+              <p className="mt-3 max-w-[620px] text-base leading-snug text-[var(--color-ink)] md:text-[17px]">
+                Khám phá bao cao su, gel bôi trơn và sản phẩm chăm sóc chính hãng — chọn theo cảm giác, giao hàng kín đáo.
               </p>
             </RevealItem>
           </div>
           <RevealItem>
-            <Button href="/shop" className="min-h-11 border border-transparent px-7 text-[15px] !text-white transition-[background-color,border-color,color] duration-200 hover:border-[#347447] hover:bg-[var(--color-green-soft)] hover:!text-[var(--color-black)] md:min-h-10 md:px-6 md:text-sm">
-              Tìm sản phẩm phù hợp
+            <Button href="/shop" className="min-h-11 border border-transparent px-7 text-[15px] !text-white transition-[background-color,border-color,color] duration-200 hover:border-[#347447] hover:bg-[var(--color-green-soft)] hover:!text-black md:min-h-10 md:px-6 md:text-sm">
+              Chọn nhanh theo cảm giác
             </Button>
           </RevealItem>
         </HeroReveal>
-        <StaggerReveal className="grid grid-cols-2 gap-2 md:grid-cols-4 md:gap-6" childVariant="scale" trigger="early">
+        <StaggerReveal className="grid gap-3 sm:grid-cols-2 md:grid-cols-4 md:gap-5" childVariant="scale" trigger="early">
           {heroCards.map((card, index) => (
-            <Link key={card.title} href={card.href} className="hero-card group relative block aspect-square overflow-hidden rounded-[var(--radius-md)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-green)]">
-              <div className="hero-card-visual absolute inset-0 transition-transform duration-300 ease-out group-hover:scale-[1.05]">
-                <HomeVisual visual={card.visual} className="h-full w-full rounded-none" showLabel={false} priority={index === 0} />
-              </div>
-              <span className="interactive-overlay absolute inset-0 z-[1] bg-[linear-gradient(180deg,rgb(0_0_0_/_0.04),rgb(0_0_0_/_0.24))] opacity-35 transition-opacity duration-300 ease-out group-hover:opacity-80" />
-              <span className="absolute left-3 top-3 z-10 text-[13px] font-semibold text-white md:left-4 md:top-4 md:text-[17px]">{card.title}</span>
-              <span className="interactive-action absolute bottom-3 left-3 z-10 grid h-9 w-9 place-items-center overflow-hidden rounded-full bg-white text-[var(--color-black)] md:bottom-4 md:left-4 md:h-10 md:w-10">
+            <Link
+              key={card.title}
+              href={card.href}
+              className={cn(
+                "hero-card group relative isolate block min-h-[310px] overflow-hidden rounded-[var(--radius-md)] shadow-[0_16px_40px_rgb(0_0_0_/_0.10)] transition-[box-shadow,transform] duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_24px_58px_rgb(0_0_0_/_0.18)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-green)] sm:aspect-[4/5] sm:min-h-0 md:aspect-[0.78]",
+                card.backgroundClass,
+                card.textClass,
+              )}
+            >
+              <span className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(180deg,rgb(255_255_255_/_0.20),transparent_32%,rgb(0_0_0_/_0.10))] opacity-70" />
+              <span className="relative z-20 block max-w-[82%] px-4 pt-4 md:px-5 md:pt-5">
+                <span className="block text-[22px] font-semibold leading-[1.02] tracking-normal md:text-[24px] lg:text-[25px]">{card.title}</span>
+                <span className={cn("mt-2 block max-w-[210px] text-[13px] font-medium leading-snug md:text-sm", card.subtitleClass)}>{card.subtitle}</span>
+              </span>
+              <span className={cn("hero-card-visual absolute z-10 block transition-transform duration-300 ease-out group-hover:scale-[1.06]", card.imageClass)}>
+                <Image
+                  src={card.imageSrc}
+                  alt={card.imageAlt}
+                  fill
+                  sizes="(min-width: 1024px) 24vw, (min-width: 640px) 48vw, 92vw"
+                  priority={index === 0}
+                  className={cn(card.imageObjectClass ?? "object-contain", "drop-shadow-[0_22px_26px_rgb(0_0_0_/_0.28)]")}
+                />
+              </span>
+              <span className="interactive-action absolute bottom-4 left-4 z-20 grid h-10 w-10 place-items-center overflow-hidden rounded-full bg-white text-[var(--color-black)] shadow-[0_10px_24px_rgb(0_0_0_/_0.16)] md:h-11 md:w-11">
                 <span className="hero-card-action-icons" aria-hidden="true">
                   <ArrowRight className="h-5 w-5 shrink-0" strokeWidth={1.8} />
                   <ArrowRight className="h-5 w-5 shrink-0" strokeWidth={1.8} />
@@ -206,8 +225,8 @@ function TrustBentoSection() {
           <h2 className="text-[34px] font-semibold leading-tight tracking-normal md:text-[54px] md:font-medium">
             Vì sao chọn <em className="font-serif font-normal italic">Herfeel</em>
           </h2>
-          <Button href="/collections/mong-nhe" className="hidden min-h-10 shrink-0 border border-transparent px-6 text-sm !text-white transition-[background-color,border-color,color] duration-200 hover:border-[#347447] hover:bg-[var(--color-green-soft)] hover:!text-[var(--color-black)] md:inline-flex">
-            Đọc hướng dẫn
+          <Button href="/playbook" className="hidden min-h-10 shrink-0 border border-transparent px-6 text-sm !text-white transition-[background-color,border-color,color] duration-200 hover:border-[#347447] hover:bg-[var(--color-green-soft)] hover:!text-black md:inline-flex">
+            Đọc PlayBook
           </Button>
         </div>
         <div className="reveal-root grid gap-3 md:grid-cols-3 md:grid-rows-[300px_300px] md:gap-5" data-reveal-kind="stagger" data-reveal-visible="true">
@@ -272,8 +291,8 @@ function TrustBentoSection() {
             );
           })}
         </div>
-        <Button href="/collections/mong-nhe" className="mt-5 min-h-11 w-full border border-transparent px-6 text-sm !text-white transition-[background-color,border-color,color] duration-200 hover:border-[#347447] hover:bg-[var(--color-green-soft)] hover:!text-[var(--color-black)] md:hidden">
-          Đọc hướng dẫn
+        <Button href="/playbook" className="mt-5 min-h-11 w-full border border-transparent px-6 text-sm !text-white transition-[background-color,border-color,color] duration-200 hover:border-[#347447] hover:bg-[var(--color-green-soft)] hover:!text-black md:hidden">
+          Đọc PlayBook
         </Button>
       </Container>
     </RevealSection>
@@ -296,25 +315,70 @@ function ReviewsSection() {
   );
 }
 
-function PromoStories() {
+function BuildKitTeaser() {
+  const kitSlots = playKitSteps.map((step) => {
+    const label = step.title.replace(/^Chọn |^Thêm |^Hoàn tất bằng /, "");
+    return label.charAt(0).toUpperCase() + label.slice(1);
+  });
+
   return (
-    <RevealSection className="bg-white py-12 md:py-16">
+    <RevealSection className="bg-white py-10 md:py-14" variant="scale">
       <Container>
-        <StaggerReveal className="grid gap-4 md:grid-cols-3" childVariant="scale">
-          {promoStories.map((story) => (
-            <Link key={story.title} href={story.href} className="promo-card group relative block h-[360px] overflow-hidden rounded-[var(--radius-md)] bg-[var(--color-ink)] text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-green)] md:h-[410px]">
-              <HomeVisual visual={story.visual} className="promo-card-visual h-full rounded-none transition-transform duration-300 group-hover:scale-[1.05]" showLabel={false} />
-              <span className="interactive-overlay absolute inset-0 bg-[linear-gradient(180deg,rgb(0_0_0_/_0.10),rgb(0_0_0_/_0.34)_50%,rgb(0_0_0_/_0.18))] opacity-55 transition-opacity duration-300 group-hover:opacity-90" />
-              <div className="absolute inset-x-0 top-0 p-5">
-                <p className="text-xs text-white/80">{story.kicker}</p>
-                <h3 className="mt-1 max-w-[260px] text-lg font-semibold leading-tight">{story.title}</h3>
+        <div className="relative isolate grid min-h-[420px] overflow-hidden rounded-[var(--radius-md)] bg-[var(--color-ink)] text-white md:min-h-[360px] md:grid-cols-[minmax(0,0.95fr)_minmax(360px,1.05fr)]">
+          <div className="flex min-h-[300px] flex-col justify-between gap-8 p-5 sm:p-7 md:min-h-0 md:p-9 lg:p-10">
+            <div>
+              <div className="mb-4 inline-flex min-h-9 items-center gap-2 rounded-[var(--radius-pill)] bg-white/8 px-3 text-xs font-semibold uppercase tracking-normal text-[var(--color-green-soft)] ring-1 ring-white/12">
+                <PackageCheck className="h-4 w-4" strokeWidth={1.8} aria-hidden="true" />
+                {homeBuildKit.eyebrow}
               </div>
-              <span className="interactive-cta absolute inset-x-6 bottom-6 grid min-h-11 place-items-center rounded-[var(--radius-pill)] bg-white px-5 text-sm font-semibold text-[var(--color-ink)] transition-[background-color,color,transform] duration-300 group-hover:translate-y-[-2px] group-hover:bg-[var(--color-ink)] group-hover:text-white">
-                {story.cta}
-              </span>
-            </Link>
-          ))}
-        </StaggerReveal>
+              <h2 className="max-w-[520px] text-[34px] font-semibold leading-[1.02] tracking-normal md:text-[48px] md:font-medium">
+                {homeBuildKit.title}
+              </h2>
+              <p className="mt-4 max-w-[600px] text-[15px] leading-snug text-white/76 md:text-base">
+                {homeBuildKit.body}
+              </p>
+            </div>
+
+            <div className="grid gap-4">
+              <div className="flex flex-wrap gap-2">
+                {homeBuildKit.chips.map((chip) => (
+                  <span key={chip} className="inline-flex min-h-8 items-center rounded-[var(--radius-pill)] bg-white px-3 text-xs font-semibold text-[var(--color-ink)]">
+                    {chip}
+                  </span>
+                ))}
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                <Button href={homeBuildKit.href} className="min-h-11 w-full gap-2 bg-[var(--color-green-soft)] px-5 text-sm !text-black hover:bg-white sm:w-auto">
+                  {homeBuildKit.cta}
+                  <ArrowRight className="h-4 w-4" strokeWidth={1.8} aria-hidden="true" />
+                </Button>
+                <p className="text-xs font-medium leading-snug text-white/66">
+                  Mã tham khảo: <span className="text-white">{homeBuildKit.promo}</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative min-h-[300px] border-t border-white/10 bg-[linear-gradient(135deg,rgb(255_255_255_/_0.06),rgb(180_235_177_/_0.12))] p-5 sm:p-7 md:min-h-0 md:border-l md:border-t-0 md:p-8">
+            <HomeVisual visual={homeBuildKit.visual} className="absolute inset-0 rounded-none opacity-[0.18]" showLabel={false} />
+            <div className="relative z-10 flex h-full min-h-[260px] flex-col justify-center gap-4">
+              <p className="text-xs font-semibold uppercase tracking-normal text-white/58">3 món trong kit</p>
+              <div className="grid gap-3">
+                {kitSlots.map((slot, index) => (
+                  <div key={slot} className="grid min-h-[70px] grid-cols-[44px_minmax(0,1fr)_32px] items-center gap-3 rounded-[var(--radius-md)] bg-white px-4 text-[var(--color-ink)] shadow-[0_14px_34px_rgb(0_0_0_/_0.18)]">
+                    <span className="grid h-11 w-11 place-items-center rounded-full bg-[var(--color-surface)] text-sm font-semibold">0{index + 1}</span>
+                    <span className="min-w-0 text-[17px] font-semibold leading-tight">{slot}</span>
+                    {index < kitSlots.length - 1 ? (
+                      <Plus className="h-5 w-5 text-[var(--color-green)]" strokeWidth={2} aria-hidden="true" />
+                    ) : (
+                      <Check className="h-5 w-5 text-[var(--color-green)]" strokeWidth={2} aria-hidden="true" />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </Container>
     </RevealSection>
   );
@@ -331,7 +395,7 @@ function BestsellersSection() {
             </h2>
             <p className="mt-2 text-sm text-[var(--color-muted)]">Những lựa chọn phổ biến, thông tin gọn để so sánh nhanh.</p>
           </div>
-          <Button href="/shop" className="hidden min-h-9 shrink-0 border border-transparent px-4 text-xs !text-white transition-[background-color,border-color,color] duration-200 hover:border-[#347447] hover:bg-[var(--color-green-soft)] hover:!text-[var(--color-black)] md:inline-flex">
+          <Button href="/shop" className="hidden min-h-9 shrink-0 border border-transparent px-4 text-xs !text-white transition-[background-color,border-color,color] duration-200 hover:border-[#347447] hover:bg-[var(--color-green-soft)] hover:!text-black md:inline-flex">
             Xem tất cả
           </Button>
         </div>

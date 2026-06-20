@@ -70,7 +70,7 @@ function RelatedProducts({ products }: { products: Product[] }) {
                   <p className="mt-1 min-h-9 text-xs leading-snug text-[var(--color-muted)]">{product.shortDescription}</p>
                   <p className="mt-2 text-xs font-semibold">Từ {formatPrice(product.price, product.currency)}</p>
                 </Link>
-                <Button href={productHref} className="mt-3 min-h-8 px-4 py-1 text-xs font-semibold">
+                <Button href={productHref} className="mt-3 min-h-8 px-4 py-1 text-xs font-bold">
                   Xem chi tiết
                 </Button>
               </article>

@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useMemo, useReducer, useRef, type MutableRefObject, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useMemo, useReducer, useRef, useState, type MutableRefObject, type ReactNode } from "react";
 import { accountAuthChangedEvent } from "@/features/account/auth-client-events";
 import { cartReducer, initialCartState } from "./cart-store";
 import type { CartAction, CartState } from "./cart-types";
@@ -14,13 +14,15 @@ type AccountSyncStatus = "anonymous" | "authenticated" | "unavailable";
 type CartContextValue = {
   state: CartState;
   dispatch: (action: CartAction) => void;
+  hydrated: boolean;
 };
 
 const CartContext = createContext<CartContextValue | null>(null);
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(cartReducer, initialCartState);
-  const hydrated = useRef(false);
+  const [hydrated, setHydrated] = useState(false);
+  const hydratedRef = useRef(false);
   const accountSyncStatus = useRef<AccountSyncStatus>("anonymous");
   const syncInFlight = useRef(false);
   const stateRef = useRef(state);
@@ -39,7 +41,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
     stateRef.current = localState;
 
     queueMicrotask(() => {
-      hydrated.current = true;
+      hydratedRef.current = true;
+      setHydrated(true);
       void syncAccountCart(localState, dispatch, accountSyncStatus, syncInFlight, lastSyncedSnapshot);
     });
 
@@ -55,12 +58,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    if (!hydrated.current) return;
+    if (!hydratedRef.current) return;
     window.localStorage.setItem(cartStorageKey, JSON.stringify(state));
   }, [state]);
 
   useEffect(() => {
-    if (!hydrated.current || accountSyncStatus.current !== "authenticated") return;
+    if (!hydratedRef.current || accountSyncStatus.current !== "authenticated") return;
 
     const snapshot = getAccountCartSnapshot(state);
     if (snapshot === lastSyncedSnapshot.current) return;
@@ -74,7 +77,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     };
   }, [state]);
 
-  const value = useMemo(() => ({ state, dispatch }), [state]);
+  const value = useMemo(() => ({ state, dispatch, hydrated }), [state, hydrated]);
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
@@ -127,9 +130,13 @@ async function syncAccountCart(
       return;
     }
 
-    const remoteCart = data.cart ? clampCartState(data.cart) : null;
+    const rawRemoteCart = data.cart ?? null;
+    const remoteCart = rawRemoteCart ? clampCartState(rawRemoteCart) : null;
+    const remoteHadInvalidLines = Boolean(rawRemoteCart && remoteCart && rawRemoteCart.items.length !== remoteCart.items.length);
     const localSnapshot = getAccountCartSnapshot(localCart);
-    const remoteIsAuthoritative = remoteCart && localSnapshot === lastSyncedSnapshot.current;
+    const localHasItems = localCart.items.length > 0;
+    const remoteIsEmpty = !remoteCart || remoteCart.items.length < 1;
+    const remoteIsAuthoritative = remoteCart && !(localHasItems && remoteIsEmpty) && localSnapshot === lastSyncedSnapshot.current;
     const mergedCart = remoteIsAuthoritative ? remoteCart : mergeAccountCartStates(localCart, remoteCart);
     const mergedSnapshot = getAccountCartSnapshot(mergedCart);
 
@@ -139,7 +146,7 @@ async function syncAccountCart(
     window.localStorage.setItem(cartStorageKey, JSON.stringify(mergedCart));
     window.localStorage.setItem(accountSyncStorageKey, mergedSnapshot);
 
-    if (!remoteCart || getAccountCartSnapshot(remoteCart) !== mergedSnapshot) {
+    if (!remoteCart || remoteHadInvalidLines || getAccountCartSnapshot(remoteCart) !== mergedSnapshot) {
       await saveAccountCart(mergedCart, lastSyncedSnapshot);
     }
   } finally {

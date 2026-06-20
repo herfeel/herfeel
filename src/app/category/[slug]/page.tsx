@@ -154,7 +154,7 @@ function CategoryProductGrid({ products, categoryLabel }: { products: Product[];
           <div className="rounded-[var(--radius-md)] border border-[var(--color-border)] bg-[var(--color-surface)] px-6 py-12 text-center">
             <h2 className="text-[24px] font-semibold leading-tight text-[var(--color-ink)]">Chưa có sản phẩm trong {categoryLabel}</h2>
             <p className="mx-auto mt-2 max-w-[520px] text-sm text-[var(--color-muted)]">Danh mục này đang chờ dữ liệu sản phẩm. Bạn có thể xem tất cả sản phẩm hoặc chuyển sang collection liên quan.</p>
-            <Button href="/shop" className="mt-6 min-h-10 px-5 text-xs">
+            <Button href="/shop" className="mt-6 min-h-10 px-5 text-xs font-bold">
               Xem tất cả
             </Button>
           </div>

@@ -144,7 +144,7 @@ function StarterPackCard({ pack }: { pack: PlayKitPack }) {
         ))}
       </ul>
       <p className="mt-4 text-sm leading-snug text-[var(--color-muted)] md:text-[15px]">{pack.description}</p>
-      <Button href={pack.href} variant="secondary" className="mt-auto min-h-11 px-5 text-sm">
+      <Button href={pack.href} variant="secondary" className="min-h-11 px-5 text-sm mt-5">
         Xem pack
       </Button>
     </article>

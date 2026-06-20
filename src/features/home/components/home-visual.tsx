@@ -17,12 +17,13 @@ type HomeVisualProps = {
   visual: HomeVisualData;
   className?: string;
   imageSizes?: string;
+  imageQuality?: number;
   labelClassName?: string;
   showLabel?: boolean;
   priority?: boolean;
 };
 
-export function HomeVisual({ visual, className, imageSizes, labelClassName, showLabel = true, priority = false }: HomeVisualProps) {
+export function HomeVisual({ visual, className, imageSizes, imageQuality, labelClassName, showLabel = true, priority = false }: HomeVisualProps) {
   const imageFit = visual.imageFit ?? "cover";
 
   return (
@@ -33,6 +34,7 @@ export function HomeVisual({ visual, className, imageSizes, labelClassName, show
           alt={visual.imageAlt ?? visual.label}
           fill
           sizes={imageSizes ?? "(min-width: 1024px) 25vw, 50vw"}
+          quality={imageQuality}
           loading={priority ? "eager" : undefined}
           preload={priority}
           className={cn(imageFit === "contain" ? "object-contain p-5 md:p-7" : "object-cover")}

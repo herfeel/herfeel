@@ -86,10 +86,11 @@ export function HomeEditorialCarousel({ items }: HomeEditorialCarouselProps) {
               visual={item.visual}
               className="editorial-card-visual h-full rounded-none transition-transform duration-500 group-hover:scale-[1.055]"
               imageSizes="(min-width: 768px) 290px, 82vw"
+              imageQuality={92}
               showLabel={false}
             />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgb(0_0_0_/_0.02),rgb(0_0_0_/_0.08)_54%,rgb(0_0_0_/_0.42))]" />
-            <div className="editorial-card-overlay absolute inset-x-3 bottom-3 rounded-[var(--radius-md)] border border-white/16 bg-black/48 px-4 py-3 text-white shadow-[0_14px_34px_rgb(0_0_0_/_0.18)] backdrop-blur-md transition-[background-color,transform] duration-300 group-hover:-translate-y-1 group-hover:bg-black/60 md:inset-x-3.5 md:bottom-3.5 md:px-[18px] md:py-4">
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-[linear-gradient(180deg,rgb(0_0_0_/_0),rgb(0_0_0_/_0.18))]" />
+            <div className="editorial-card-overlay absolute inset-x-3 bottom-3 rounded-[var(--radius-md)] bg-black/50 px-4 py-3 text-white shadow-[0_10px_24px_rgb(0_0_0_/_0.16)] transition-[background-color,transform] duration-300 group-hover:-translate-y-1 group-hover:bg-black/58 md:inset-x-3.5 md:bottom-3.5 md:px-[18px] md:py-4">
               <h3 className="text-[17px] font-semibold leading-tight md:text-[18px]">{item.name}</h3>
             </div>
           </article>

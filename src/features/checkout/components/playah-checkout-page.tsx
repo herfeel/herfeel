@@ -3,11 +3,16 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle2, ChevronDown, CircleAlert, HelpCircle, PackageCheck, Search } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
-import { useForm, type UseFormRegisterReturn } from "react-hook-form";
+import { useForm, useWatch, type UseFormRegisterReturn } from "react-hook-form";
 import type { AccountCustomer } from "@/features/account/auth-service";
 import { checkoutFormSchema, type CheckoutFormValues } from "@/features/checkout/address-schema";
-import { mockCheckoutCart, mockCheckoutMainProduct } from "@/features/checkout/mock-checkout-data";
+import { mockCheckoutMainProduct } from "@/features/checkout/mock-checkout-data";
+import { defaultVietnamProvince, getVietnamDistrictOptions, vietnamProvinceOptions } from "@/features/checkout/vietnam-address-options";
+import { isValidOrderCartLine } from "@/features/cart/cart-line-builder";
+import { useCart } from "@/features/cart/cart-provider";
+import { initialCartState } from "@/features/cart/cart-store";
 import type { CartState } from "@/features/cart/cart-types";
 import { getCartItemCount } from "@/features/cart/cart-utils";
 import { siteConfig } from "@/config/site";
@@ -19,9 +24,10 @@ type HerfeelCheckoutPageProps = {
 };
 
 export function HerfeelCheckoutPage({ customer }: HerfeelCheckoutPageProps) {
-  const checkoutCart = mockCheckoutCart;
+  const router = useRouter();
+  const { state: checkoutCart, dispatch, hydrated } = useCart();
   const [summaryOpen, setSummaryOpen] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const [orderError, setOrderError] = useState<string | null>(null);
   const form = useForm<CheckoutFormValues>({
     resolver: zodResolver(checkoutFormSchema),
     defaultValues: {
@@ -30,6 +36,7 @@ export function HerfeelCheckoutPage({ customer }: HerfeelCheckoutPageProps) {
       lastName: customer?.lastName,
       phone: customer?.phone,
       country: "Việt Nam",
+      city: defaultVietnamProvince.value,
       billingSame: true,
       marketingEmail: false,
       marketingText: false,
@@ -38,10 +45,60 @@ export function HerfeelCheckoutPage({ customer }: HerfeelCheckoutPageProps) {
   });
 
   const errors = form.formState.errors;
-  const submitLabel = useMemo(() => (submitted ? "Đơn COD đã sẵn sàng" : "Đặt hàng COD"), [submitted]);
+  const selectedCity = useWatch({ control: form.control, name: "city" });
+  const cityProps = form.register("city", {
+    onChange: () => form.setValue("state", "", { shouldDirty: true, shouldValidate: true }),
+  });
+  const districtOptions = useMemo(() => getVietnamDistrictOptions(selectedCity), [selectedCity]);
+  const itemCount = getCartItemCount(checkoutCart.items);
+  const cartIsLoading = !hydrated;
+  const cartIsEmpty = hydrated && itemCount < 1;
+  const cartHasInvalidLines = hydrated && checkoutCart.items.some((item) => !isValidOrderCartLine(item));
+  const submitDisabled = form.formState.isSubmitting || cartIsLoading || cartIsEmpty || cartHasInvalidLines;
+  const submitLabel = useMemo(() => {
+    if (cartIsLoading) return "Đang tải giỏ hàng...";
+    if (form.formState.isSubmitting) return "Đang tạo đơn...";
+    if (cartIsEmpty) return "Giỏ hàng đang trống";
+    if (cartHasInvalidLines) return "Cần cập nhật giỏ hàng";
+    return "Đặt hàng COD";
+  }, [cartHasInvalidLines, cartIsEmpty, cartIsLoading, form.formState.isSubmitting]);
 
-  function onSubmit() {
-    setSubmitted(true);
+  async function onSubmit(values: CheckoutFormValues) {
+    setOrderError(null);
+
+    if (!hydrated) {
+      setOrderError("Đang tải giỏ hàng. Vui lòng thử lại sau vài giây.");
+      return;
+    }
+
+    if (getCartItemCount(checkoutCart.items) < 1) {
+      setOrderError("Giỏ hàng đang trống. Vui lòng quay lại giỏ hàng hoặc cửa hàng để thêm sản phẩm.");
+      return;
+    }
+
+    if (checkoutCart.items.some((item) => !isValidOrderCartLine(item))) {
+      setOrderError("Sản phẩm trong giỏ hàng không còn hợp lệ. Vui lòng xóa và thêm lại sản phẩm.");
+      return;
+    }
+
+    const response = await fetch("/api/orders", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ cart: checkoutCart, checkout: values, paymentMethod: "cod" }),
+    });
+    const data = (await response.json().catch(() => ({}))) as { ok?: boolean; message?: string; orderId?: number; orderNumber?: string };
+
+    if (!response.ok || data.ok === false) {
+      setOrderError(data.message || "Không thể tạo đơn.");
+      return;
+    }
+
+    dispatch({ type: "cart/hydrate", payload: { ...initialCartState, updatedAt: new Date().toISOString() } });
+
+    const params = new URLSearchParams();
+    if (data.orderId) params.set("orderId", String(data.orderId));
+    if (data.orderNumber) params.set("orderNumber", data.orderNumber);
+    router.push(`/order-success${params.size ? `?${params.toString()}` : ""}`);
   }
 
   return (
@@ -49,7 +106,7 @@ export function HerfeelCheckoutPage({ customer }: HerfeelCheckoutPageProps) {
       <div className="md:hidden">
         <MobileLogo />
         <MobileSummaryBar open={summaryOpen} total={checkoutCart.totals.total.value} onToggle={() => setSummaryOpen((value) => !value)} />
-        {summaryOpen ? <div className="border-b border-[#E8E4DD] bg-[#F7F5F2] px-3 pb-4"><OrderSummary cart={checkoutCart} compact /></div> : null}
+        {summaryOpen ? <div className="border-b border-[#E8E4DD] bg-[#F7F5F2] px-3 pb-4"><OrderSummary cart={checkoutCart} hydrated={hydrated} compact /></div> : null}
       </div>
 
       <div className="grid min-h-screen md:grid-cols-[55%_45%]">
@@ -60,7 +117,6 @@ export function HerfeelCheckoutPage({ customer }: HerfeelCheckoutPageProps) {
             </div>
 
             <WarningCard />
-
 
             {!customer ? (
               <>
@@ -95,14 +151,18 @@ export function HerfeelCheckoutPage({ customer }: HerfeelCheckoutPageProps) {
               </div>
               <TextInput className="mt-3" placeholder="Căn hộ, tầng, ghi chú thêm (không bắt buộc)" {...form.register("apartment")} />
               <div className="mt-3 grid gap-3 sm:grid-cols-[1fr_1fr_1fr]">
-                <TextInput placeholder="Tỉnh/Thành phố" error={errors.city?.message} {...form.register("city")} />
+                <SelectInput aria-label="Tỉnh/Thành phố" error={errors.city?.message} {...cityProps}>
+                  {vietnamProvinceOptions.map((province) => (
+                    <option key={province.value} value={province.value}>{province.label}</option>
+                  ))}
+                </SelectInput>
                 <SelectInput aria-label="Quận/Huyện" error={errors.state?.message} {...form.register("state")}>
                   <option value="">Quận/Huyện</option>
-                  <option>Quận 1</option>
-                  <option>Quận 3</option>
-                  <option>Thành phố Thủ Đức</option>
+                  {districtOptions.map((district) => (
+                    <option key={district} value={district}>{district}</option>
+                  ))}
                 </SelectInput>
-                <TextInput placeholder="Mã bưu chính" error={errors.zip?.message} {...form.register("zip")} />
+                <TextInput placeholder="Mã bưu chính (không bắt buộc)" error={errors.zip?.message} {...form.register("zip")} />
               </div>
               <div className="relative mt-3">
                 <TextInput placeholder="Số điện thoại *" error={errors.phone?.message} {...form.register("phone")} />
@@ -129,9 +189,21 @@ export function HerfeelCheckoutPage({ customer }: HerfeelCheckoutPageProps) {
               <MobileDiscountAndTotal cart={checkoutCart} />
             </div>
 
-            {submitted ? <p className="mt-5 rounded-[8px] border border-[#9beb8b] bg-[#DDF4D8] px-4 py-3 text-sm font-medium">Đơn COD thử nghiệm đã được ghi nhận. Không có thanh toán online nào được thu.</p> : null}
+            {orderError ? <p className="mt-5 rounded-[8px] border border-[#f0b8b8] bg-[#fff0f0] px-4 py-3 text-sm font-bold text-[#9f1d1d]">{orderError}</p> : null}
 
-            <button type="submit" className="mt-8 h-[56px] w-full rounded-full bg-black px-5 text-sm font-bold text-white transition hover:bg-[#222] md:mt-12">
+            {cartIsEmpty ? (
+              <div className="mt-5 rounded-[8px] border border-[#E8E4DD] bg-[#F7F5F2] px-4 py-4 text-sm font-bold">
+                <p>Giỏ hàng đang trống.</p>
+                <div className="mt-3 flex gap-4 underline">
+                  <a href="/cart">Quay lại giỏ hàng</a>
+                  <a href="/shop">Tiếp tục mua sắm</a>
+                </div>
+              </div>
+            ) : null}
+
+            {cartHasInvalidLines ? <p className="mt-5 rounded-[8px] border border-[#f0b8b8] bg-[#fff0f0] px-4 py-3 text-sm font-bold text-[#9f1d1d]">Sản phẩm trong giỏ hàng không còn hợp lệ. Vui lòng xóa và thêm lại sản phẩm.</p> : null}
+
+            <button type="submit" disabled={submitDisabled} className="mt-8 h-[56px] w-full rounded-full bg-black px-5 text-sm font-bold text-white transition hover:bg-[#222] disabled:cursor-not-allowed disabled:bg-[#8A837A] md:mt-12">
               {submitLabel}
             </button>
 
@@ -141,7 +213,7 @@ export function HerfeelCheckoutPage({ customer }: HerfeelCheckoutPageProps) {
 
         <aside className="hidden min-h-screen bg-[#F2EFE8] md:block">
           <div className="sticky top-0 ml-6 max-w-[350px] px-0 py-12 xl:ml-[52px] xl:max-w-[472px]">
-            <OrderSummary cart={checkoutCart} />
+            <OrderSummary cart={checkoutCart} hydrated={hydrated} />
           </div>
         </aside>
       </div>
@@ -232,10 +304,12 @@ function PaymentMock({ billingProps }: { billingProps: UseFormRegisterReturn }) 
   );
 }
 
-function OrderSummary({ cart, compact = false }: { cart: CartState; compact?: boolean }) {
+function OrderSummary({ cart, hydrated, compact = false }: { cart: CartState; hydrated: boolean; compact?: boolean }) {
   const cartItems = cart.items;
   return (
     <div className={cn("text-[#111]", compact && "mx-auto max-w-[430px]")}> 
+      {!hydrated ? <p className="rounded-[4px] border border-[#E8E4DD] bg-white px-5 py-4 text-sm font-bold">Đang tải giỏ hàng...</p> : null}
+      {hydrated && cartItems.length < 1 ? <p className="rounded-[4px] border border-[#E8E4DD] bg-white px-5 py-4 text-sm font-bold">Giỏ hàng đang trống.</p> : null}
       {cartItems.map((item) => (
         <div key={item.key} className="mb-6 grid grid-cols-[82px_1fr_auto] gap-4">
           <div className="relative rounded-[4px] border border-[#E8E4DD] bg-white p-2">

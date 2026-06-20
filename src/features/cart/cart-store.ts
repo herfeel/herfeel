@@ -1,4 +1,5 @@
 import { commerceConfig } from "@/config/commerce";
+import { isValidOrderCartLine } from "./cart-line-builder";
 import type { CartAction, CartLineItem, CartState } from "./cart-types";
 import { calculateCartTotals, mergeCartLineItem } from "./cart-utils";
 
@@ -29,6 +30,7 @@ export function cartReducer(state: CartState, action: CartAction): CartState {
     case "cart/hydrate":
       return action.payload;
     case "cart/add-item":
+      if (!isValidOrderCartLine(action.payload) || action.payload.unitPrice.value <= 0) return { ...state, error: "Sản phẩm trong giỏ hàng không còn hợp lệ. Vui lòng xóa và thêm lại sản phẩm." };
       return withTotals({ ...state, items: mergeCartLineItem(state.items, action.payload), error: undefined });
     case "cart/update-quantity":
       return withTotals({

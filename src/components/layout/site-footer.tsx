@@ -13,7 +13,7 @@ const footerGroups = [
   },
   {
     title: "Hỗ trợ",
-    links: ["Câu hỏi thường gặp", "Liên hệ", "Giao hàng và đổi trả", "Hướng dẫn chọn", "Combo tiết kiệm", "Điều khoản"],
+    links: ["Câu hỏi thường gặp", "Liên hệ", "Giao hàng và đổi trả", "PlayBook chọn sản phẩm", "Combo tiết kiệm", "Điều khoản"],
   },
 ];
 

@@ -8,7 +8,7 @@ export const addressBaseSchema = z.object({
   address2: z.string().optional(),
   city: z.string().min(1, "Bắt buộc"),
   state: z.string().min(1, "Bắt buộc"),
-  postcode: z.string().min(4, "Bắt buộc"),
+  postcode: z.string().optional(),
   country: z.string().min(2, "Bắt buộc"),
   phone: z.string().min(8, "Bắt buộc"),
 });
@@ -28,7 +28,7 @@ export const checkoutFormSchema = z.object({
   address: z.string().min(1, "Bắt buộc"),
   city: z.string().min(1, "Bắt buộc"),
   state: z.string().min(1, "Bắt buộc"),
-  zip: z.string().min(4, "Bắt buộc"),
+  zip: z.string().optional(),
   phone: z.string().min(8, "Bắt buộc"),
   country: z.string().min(1),
   company: z.string().optional(),
@@ -52,7 +52,7 @@ export function mapCheckoutFormToAddresses(values: CheckoutFormValues) {
     address2: values.apartment,
     city: values.city,
     state: values.state,
-    postcode: values.zip,
+    postcode: values.zip ?? "",
     country: values.country,
     phone: values.phone,
   };

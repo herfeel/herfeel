@@ -2,7 +2,7 @@
 /**
  * Plugin Name: PlayAh Auth Bridge V2
  * Description: Customer auth bridge for PlayAh storefront sessions.
- * Version: 0.1.3
+ * Version: 0.1.5
  * Author: PlayAh
  */
 
@@ -11,7 +11,7 @@ if (!defined('ABSPATH')) {
 }
 
 const PLAYAH_AUTH_NAMESPACE = 'playah/v1';
-const PLAYAH_AUTH_BRIDGE_VERSION = '0.1.3';
+const PLAYAH_AUTH_BRIDGE_VERSION = '0.1.5';
 const PLAYAH_AUTH_SESSION_TTL = WEEK_IN_SECONDS;
 const PLAYAH_AUTH_RATE_LIMIT = 5;
 const PLAYAH_AUTH_RATE_WINDOW = 15 * MINUTE_IN_SECONDS;
@@ -92,6 +92,12 @@ function playah_auth_bridge_register_routes(): void
             'permission_callback' => '__return_true',
         ],
     ]);
+
+    register_rest_route(PLAYAH_AUTH_NAMESPACE, '/orders', [
+        'methods' => WP_REST_Server::CREATABLE,
+        'callback' => 'playah_auth_bridge_create_order',
+        'permission_callback' => '__return_true',
+    ]);
 }
 
 function playah_auth_bridge_status(WP_REST_Request $request)
@@ -102,6 +108,7 @@ function playah_auth_bridge_status(WP_REST_Request $request)
         'version' => PLAYAH_AUTH_BRIDGE_VERSION,
         'namespace' => PLAYAH_AUTH_NAMESPACE,
         'cartEnabled' => true,
+        'ordersEnabled' => true,
     ], 200);
 }
 
@@ -260,6 +267,190 @@ function playah_auth_bridge_put_cart(WP_REST_Request $request)
         'ok' => true,
         'cart' => $cart,
     ], 200);
+}
+
+function playah_auth_bridge_create_order(WP_REST_Request $request)
+{
+    $session = playah_auth_bridge_get_session_from_request($request);
+
+    if (!$session) {
+        return playah_auth_bridge_error('playah_invalid_session', 'Phiên đăng nhập đã hết hạn.', 401);
+    }
+
+    if (!function_exists('wc_create_order') || !function_exists('wc_get_product')) {
+        return playah_auth_bridge_error('playah_woocommerce_unavailable', 'WooCommerce chưa sẵn sàng để tạo đơn.', 503);
+    }
+
+    $params = playah_auth_bridge_json_params($request);
+    $payment_method = sanitize_text_field($params['paymentMethod'] ?? '');
+
+    if ($payment_method !== 'cod') {
+        return playah_auth_bridge_error('playah_invalid_payment_method', 'Hiện tại chỉ hỗ trợ COD.', 400);
+    }
+
+    if (!isset($params['cart']) || !is_array($params['cart']) || !isset($params['checkout']) || !is_array($params['checkout'])) {
+        return playah_auth_bridge_error('playah_invalid_order', 'Thông tin đơn hàng chưa hợp lệ.', 400);
+    }
+
+    $cart = playah_auth_bridge_sanitize_cart_snapshot($params['cart']);
+    $checkout = playah_auth_bridge_sanitize_checkout($params['checkout']);
+
+    if ($cart === null || count($cart['items']) < 1) {
+        return playah_auth_bridge_error('playah_empty_cart', 'Giỏ hàng đang trống.', 400);
+    }
+
+    if ($checkout === null) {
+        return playah_auth_bridge_error('playah_invalid_checkout', 'Thông tin giao hàng chưa hợp lệ.', 400);
+    }
+
+    $order_lines = [];
+    foreach ($cart['items'] as $item) {
+        $product_id_raw = $item['productId'] ?? '';
+        $variation_id_raw = $item['variationId'] ?? null;
+        $quantity = absint($item['quantity'] ?? 0);
+
+        if (!playah_auth_bridge_is_positive_integer_string($product_id_raw) || ($variation_id_raw !== null && $variation_id_raw !== '' && !playah_auth_bridge_is_positive_integer_string($variation_id_raw))) {
+            return playah_auth_bridge_error('playah_invalid_cart_product', 'Sản phẩm trong giỏ hàng không còn hợp lệ. Vui lòng xóa và thêm lại sản phẩm.', 400);
+        }
+
+        $product_id = absint($product_id_raw);
+        $variation_id = ($variation_id_raw !== null && $variation_id_raw !== '') ? absint($variation_id_raw) : 0;
+        $product = $variation_id > 0 ? wc_get_product($variation_id) : wc_get_product($product_id);
+
+        if (!$product || $quantity < 1 || !playah_auth_bridge_product_can_be_ordered($product, $quantity)) {
+            return playah_auth_bridge_error('playah_invalid_cart_product', 'Sản phẩm trong giỏ hàng không còn hợp lệ. Vui lòng xóa và thêm lại sản phẩm.', 400);
+        }
+
+        if ($variation_id > 0 && (!$product->is_type('variation') || (int) $product->get_parent_id() !== $product_id)) {
+            return playah_auth_bridge_error('playah_invalid_cart_product', 'Sản phẩm trong giỏ hàng không còn hợp lệ. Vui lòng xóa và thêm lại sản phẩm.', 400);
+        }
+
+        $order_lines[] = ['product' => $product, 'quantity' => $quantity];
+    }
+
+    try {
+        $order = wc_create_order(['customer_id' => (int) $session['user_id']]);
+
+        if (is_wp_error($order)) {
+            return playah_auth_bridge_error($order->get_error_code(), $order->get_error_message(), 400);
+        }
+
+        foreach ($order_lines as $line) {
+            $line_item_id = $order->add_product($line['product'], $line['quantity']);
+            if (!$line_item_id) {
+                $order->delete(true);
+                return playah_auth_bridge_error('playah_order_line_failed', 'Không thể thêm sản phẩm vào đơn.', 400);
+            }
+        }
+
+        $order->set_address($checkout['billing'], 'billing');
+        $order->set_address($checkout['shipping'], 'shipping');
+        $order->set_payment_method('cod');
+        $order->set_payment_method_title('Thanh toán khi nhận hàng (COD)');
+        $order->set_customer_note($checkout['note']);
+        $order->calculate_totals();
+        $order->update_status('on-hold', 'PlayAh COD order created from storefront checkout.', true);
+        $order->save();
+
+        update_user_meta((int) $session['user_id'], PLAYAH_AUTH_CART_META_KEY, wp_json_encode(playah_auth_bridge_empty_cart_snapshot()));
+        playah_auth_bridge_touch_session((int) $session['id']);
+
+        return new WP_REST_Response([
+            'ok' => true,
+            'message' => 'Đã tạo đơn hàng.',
+            'orderId' => (int) $order->get_id(),
+            'orderNumber' => (string) $order->get_order_number(),
+        ], 201);
+    } catch (Throwable $error) {
+        return playah_auth_bridge_error('playah_order_create_failed', 'Không thể tạo đơn WooCommerce.', 500);
+    }
+}
+
+function playah_auth_bridge_is_positive_integer_string($value): bool
+{
+    return is_string($value) && preg_match('/^[1-9]\d*$/', $value) === 1;
+}
+
+function playah_auth_bridge_product_can_be_ordered($product, int $quantity): bool
+{
+    if (!$product || !$product->is_purchasable() || !$product->is_in_stock()) {
+        return false;
+    }
+
+    if ((float) $product->get_price() <= 0) {
+        return false;
+    }
+
+    if (method_exists($product, 'has_enough_stock') && !$product->has_enough_stock($quantity)) {
+        return false;
+    }
+
+    return true;
+}
+
+function playah_auth_bridge_sanitize_checkout(array $checkout): ?array
+{
+    $email = sanitize_email($checkout['email'] ?? '');
+    $first_name = sanitize_text_field($checkout['firstName'] ?? '');
+    $last_name = sanitize_text_field($checkout['lastName'] ?? '');
+    $phone = sanitize_text_field($checkout['phone'] ?? '');
+    $address_1 = sanitize_text_field($checkout['address'] ?? '');
+    $address_2 = sanitize_text_field($checkout['apartment'] ?? '');
+    $city = sanitize_text_field($checkout['city'] ?? '');
+    $state = sanitize_text_field($checkout['state'] ?? '');
+    $postcode = sanitize_text_field($checkout['zip'] ?? '');
+    $country = playah_auth_bridge_country_code(sanitize_text_field($checkout['country'] ?? 'VN'));
+
+    if (!is_email($email) || $first_name === '' || $last_name === '' || $phone === '' || $address_1 === '' || $city === '' || $state === '' || $country === '') {
+        return null;
+    }
+
+    $address = [
+        'first_name' => $first_name,
+        'last_name' => $last_name,
+        'company' => sanitize_text_field($checkout['company'] ?? ''),
+        'email' => $email,
+        'phone' => $phone,
+        'address_1' => $address_1,
+        'address_2' => $address_2,
+        'city' => $city,
+        'state' => $state,
+        'postcode' => $postcode,
+        'country' => $country,
+    ];
+
+    return [
+        'billing' => $address,
+        'shipping' => array_diff_key($address, ['email' => true, 'phone' => true]),
+        'note' => $address_2 ? 'Ghi chú giao hàng: ' . $address_2 : '',
+    ];
+}
+
+function playah_auth_bridge_country_code(string $country): string
+{
+    $normalized = strtolower(remove_accents(trim($country)));
+
+    if ($normalized === 'viet nam' || strtoupper($country) === 'VN') {
+        return 'VN';
+    }
+
+    if ($normalized === 'hoa ky' || $normalized === 'united states' || strtoupper($country) === 'US') {
+        return 'US';
+    }
+
+    return preg_match('/^[A-Z]{2}$/', strtoupper($country)) ? strtoupper($country) : 'VN';
+}
+
+function playah_auth_bridge_empty_cart_snapshot(): array
+{
+    return [
+        'source' => 'woocommerce-store-api',
+        'items' => [],
+        'coupons' => [],
+        'totals' => playah_auth_bridge_sanitize_cart_totals([], 'VND'),
+        'isLoading' => false,
+        'updatedAt' => gmdate('c'),
+    ];
 }
 
 function playah_auth_bridge_read_cart_snapshot(int $user_id): ?array

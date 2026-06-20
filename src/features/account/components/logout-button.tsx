@@ -18,7 +18,7 @@ export function LogoutButton() {
   }
 
   return (
-    <Button type="button" variant="secondary" disabled={pending} onClick={handleLogout} className="min-h-11 px-6 text-sm !text-[var(--color-ink)]">
+    <Button type="button" variant="secondary" disabled={pending} onClick={handleLogout} className="min-h-11 px-6 text-sm !text-black">
       {pending ? "Đang đăng xuất..." : "Đăng xuất"}
     </Button>
   );

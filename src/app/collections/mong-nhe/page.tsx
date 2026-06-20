@@ -163,7 +163,7 @@ function SupportSection() {
             <h2 className="text-[25px] font-semibold leading-[1.04] md:text-[44px]">{supportSection.title}</h2>
             <p className="mt-3 text-sm leading-snug text-white/84 md:text-base">{supportSection.body}</p>
             {supportSection.ctaLabel && supportSection.ctaHref ? (
-              <Button href={supportSection.ctaHref} variant="secondary" className="mt-6 min-h-10 px-5 text-xs !text-[var(--color-ink)]">
+              <Button href={supportSection.ctaHref} variant="secondary" className="mt-6 min-h-10 px-5 text-xs !text-black">
                 {supportSection.ctaLabel}
               </Button>
             ) : null}

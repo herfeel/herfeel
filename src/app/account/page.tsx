@@ -72,7 +72,7 @@ export default async function AccountPage() {
                 ) : (
                   <>
                     <Button href="/login" className="min-h-11 px-6 text-sm !text-white">Đăng nhập</Button>
-                    <Button href="/register" variant="secondary" className="min-h-11 px-6 text-sm !text-[var(--color-ink)]">Đăng ký</Button>
+                    <Button href="/register" variant="secondary" className="min-h-11 px-6 text-sm !text-black">Đăng ký</Button>
                   </>
                 )}
               </div>
@@ -102,7 +102,7 @@ export default async function AccountPage() {
                   <Icon aria-hidden="true" className="h-6 w-6 stroke-[1.6] text-[var(--color-ink)]" />
                   <h2 className="mt-5 text-[20px] font-semibold leading-tight text-[var(--color-ink)]">{card.title}</h2>
                   <p className="mt-2 min-h-[72px] text-sm leading-6 text-[var(--color-muted)]">{card.body}</p>
-                  <span className="mt-5 inline-flex min-h-9 items-center rounded-[var(--radius-pill)] border border-transparent bg-[var(--color-ink)] px-4 text-xs font-semibold text-white transition-[background-color,border-color,color,transform] duration-200 hover:-translate-y-0.5 hover:border-[#347447] hover:bg-[var(--color-green-soft)] hover:text-[var(--color-black)]">
+                  <span className="mt-5 inline-flex min-h-9 items-center rounded-[var(--radius-pill)] border border-transparent bg-[var(--color-ink)] px-4 text-xs font-semibold text-white transition-[background-color,border-color,color,transform] duration-200 hover:-translate-y-0.5 hover:border-[#347447] hover:bg-[var(--color-green-soft)] hover:text-black">
                     {card.cta}
                   </span>
                 </Link>

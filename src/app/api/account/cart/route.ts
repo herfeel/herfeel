@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 import { customerSessionCookieName, getAccountAuthApiUrl } from "@/features/account/auth-service";
+import { isValidOrderCartLine } from "@/features/cart/cart-line-builder";
 import type { CartState } from "@/features/cart/cart-types";
 
 const wordpressRequestTimeoutMs = 8000;
@@ -94,7 +95,7 @@ function isCartStateLike(value: unknown): value is CartState {
     const line = item as Partial<CartState["items"][number]>;
     const quantity = line.quantity;
 
-    return typeof line.key === "string" && typeof line.productId === "string" && typeof line.name === "string" && typeof quantity === "number" && Number.isInteger(quantity) && quantity > 0;
+    return typeof line.key === "string" && typeof line.productId === "string" && typeof line.name === "string" && typeof quantity === "number" && isValidOrderCartLine({ productId: line.productId, variationId: line.variationId, quantity });
   });
 }
 

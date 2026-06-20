@@ -8,7 +8,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useMemo, useState, type MouseEvent } from "react";
 import { commerceConfig } from "@/config/commerce";
 import { siteConfig } from "@/config/site";
-import { categoryTiles, mainNav, megaTabs, needTiles, type MegaTab, type MenuTile } from "@/data/mock/navigation";
+import { mainNav, shopNavigationGroups, shopNavigationTrustNote, type ShopNavigationGroupId, type ShopNavigationItem } from "@/data/mock/navigation";
 import { accountAuthChangedEvent, notifyAccountAuthChanged } from "@/features/account/auth-client-events";
 import { useCart } from "@/features/cart/cart-provider";
 import { getCartItemCount } from "@/features/cart/cart-utils";
@@ -21,13 +21,12 @@ export function SiteHeader() {
   const router = useRouter();
   const { state: cartState } = useCart();
   const [navValue, setNavValue] = useState("");
-  const [activeTab, setActiveTab] = useState<MegaTab>(megaTabs[0]);
+  const [activeGroup, setActiveGroup] = useState<ShopNavigationGroupId>(shopNavigationGroups[0].id);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
   const [customer, setCustomer] = useState<HeaderCustomer | null>(null);
   const [accountLoading, setAccountLoading] = useState(true);
-  const [mobileTab, setMobileTab] = useState<MegaTab>(megaTabs[0]);
   const megaOpen = navValue === "shop";
   const hasOverlay = megaOpen || mobileOpen || cartOpen || accountOpen;
   const cartItemCount = getCartItemCount(cartState.items);
@@ -143,9 +142,10 @@ export function SiteHeader() {
               <NavigationMenu.Root value={navValue} onValueChange={handleNavValueChange} delayDuration={160} skipDelayDuration={280} className="relative hidden lg:flex">
                 <NavigationMenu.List className="flex items-center gap-7 xl:gap-9">
                   {mainNav.map((link) => {
-                    const active = pathname === link.href || (link.href !== "/" && pathname.startsWith(link.href));
+                    const href = link.href as string;
+                    const active = href.startsWith("/#") ? false : pathname === href || pathname.startsWith(`${href}/`);
 
-                    if (link.menu) {
+                    if ("menu" in link && link.menu) {
                       return (
                         <NavigationMenu.Item key={link.href} value={link.value}>
                           <NavigationMenu.Trigger
@@ -160,7 +160,7 @@ export function SiteHeader() {
                             <NavChevron />
                           </NavigationMenu.Trigger>
                           <NavigationMenu.Content className="site-nav-content">
-                            <MegaPanel activeTab={activeTab} setActiveTab={setActiveTab} />
+                            <MegaPanel activeGroup={activeGroup} setActiveGroup={setActiveGroup} />
                           </NavigationMenu.Content>
                         </NavigationMenu.Item>
                       );
@@ -234,7 +234,7 @@ export function SiteHeader() {
         </div>
       </div>
 
-      <MobileMenu open={mobileOpen} customer={customer} loading={accountLoading} onLogout={handleLogout} onClose={() => setMobileOpen(false)} activeTab={mobileTab} setActiveTab={setMobileTab} onHashNavClick={handleHashNavClick} />
+      <MobileMenu open={mobileOpen} customer={customer} loading={accountLoading} onLogout={handleLogout} onClose={() => setMobileOpen(false)} onHashNavClick={handleHashNavClick} />
       <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
     </header>
   );
@@ -288,137 +288,84 @@ function BagIcon() {
   );
 }
 
-function MegaPanel({ activeTab, setActiveTab }: { activeTab: MegaTab; setActiveTab: (tab: MegaTab) => void }) {
+function MegaPanel({ activeGroup, setActiveGroup }: { activeGroup: ShopNavigationGroupId; setActiveGroup: (group: ShopNavigationGroupId) => void }) {
+  const currentGroup = shopNavigationGroups.find((group) => group.id === activeGroup) ?? shopNavigationGroups[0];
+
   return (
-    <div className="grid h-[340px] w-screen grid-cols-[272px_1fr] overflow-hidden rounded-b-[8px] border-b border-black/10 bg-white text-[var(--color-ink)] shadow-[var(--shadow-menu)] xl:grid-cols-[292px_1fr]">
-      <aside className="grid h-[340px] grid-rows-[1fr_auto] bg-[var(--color-surface)]">
-        <div className="pt-7">
-          {megaTabs.map((item) => (
-            <button
-              key={item}
-              type="button"
-              onMouseEnter={() => setActiveTab(item)}
-              onFocus={() => setActiveTab(item)}
-              onClick={() => setActiveTab(item)}
-              className={item === activeTab ? "flex h-[54px] w-full items-center bg-white px-8 text-left text-sm font-semibold text-[var(--color-ink)]" : "flex h-[54px] w-full items-center px-8 text-left text-sm font-semibold text-[var(--color-ink)] transition-[background-color,padding] duration-200 hover:bg-white/70 hover:pl-9 focus-visible:bg-white/70"}
-            >
-              {item}
-            </button>
-          ))}
-          <Link href="/collections/combo" className="mx-8 mt-6 inline-flex min-h-9 items-center rounded-[var(--radius-pill)] border border-[var(--color-green)] bg-[var(--color-green-soft)] px-4 text-xs font-semibold text-[var(--color-ink)] transition-transform duration-200 hover:-translate-y-0.5">
-            Ưu đãi kín đáo
-          </Link>
+    <div className="grid min-h-[472px] w-screen grid-cols-[252px_1fr] overflow-hidden rounded-b-[8px] border-b border-black/10 bg-white text-[var(--color-ink)] shadow-[var(--shadow-menu)] xl:grid-cols-[282px_1fr] 2xl:grid-cols-[352px_1fr]">
+      <aside className="grid grid-rows-[1fr_auto] bg-[var(--color-surface)]">
+        <div className="px-6 pt-8 xl:px-8">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-muted)]">Mua sắm Herfeel</p>
+          <div className="mt-5 grid gap-0" role="tablist" aria-label="Nhóm mua sắm">
+            {shopNavigationGroups.map((group) => (
+              <button
+                key={group.id}
+                type="button"
+                role="tab"
+                aria-selected={group.id === activeGroup}
+                onMouseEnter={() => setActiveGroup(group.id)}
+                onFocus={() => setActiveGroup(group.id)}
+                onClick={() => setActiveGroup(group.id)}
+                className={group.id === activeGroup ? "rounded-[8px] bg-white px-4 py-4 text-left shadow-[0_8px_22px_rgb(0_0_0/0.06)]" : "rounded-[8px] px-4 py-4 text-left transition-[background-color,transform] duration-200 hover:translate-x-1 hover:bg-white/75 focus-visible:bg-white"}
+              >
+                <span className="block text-[15px] font-semibold leading-none">{group.label}</span>
+              </button>
+            ))}
+          </div>
         </div>
-        <div className="border-t border-[var(--color-border)] p-7">
+        <div className="border-t border-[var(--color-border)] p-6 xl:p-7">
+          <p className="mb-4 text-xs font-semibold text-[var(--color-muted)]">{shopNavigationTrustNote}</p>
           <Link href="/shop" className="inline-flex min-h-10 items-center rounded-[var(--radius-pill)] bg-[var(--color-ink)] px-5 text-xs font-semibold !text-white transition-transform duration-200 hover:-translate-y-0.5">
-            Mua tất cả
+            Xem tất cả sản phẩm
           </Link>
         </div>
       </aside>
-      <div className="px-7 pb-7 pt-8 xl:px-9">
-        <MegaContent tab={activeTab} />
+      <div className="px-6 pb-7 pt-8 xl:px-8 2xl:px-10">
+        <div className="mb-5 flex min-h-[52px] items-end justify-between gap-6">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--color-muted)]">{currentGroup.label}</p>
+            <h2 className="mt-2 text-[24px] font-semibold leading-tight">Chọn đúng nhanh hơn</h2>
+          </div>
+          <Link href="/playbook" className="text-sm font-semibold underline-offset-4 hover:underline">Cần gợi ý?</Link>
+        </div>
+        <div className="grid grid-cols-3 gap-4 xl:grid-cols-4 xl:gap-5">
+          {currentGroup.items.map((item) => (
+            <MegaMenuLink key={item.label} item={item} />
+          ))}
+        </div>
       </div>
     </div>
   );
 }
 
-function MegaContent({ tab }: { tab: MegaTab }) {
-  const tiles = tab === "Mua theo nhu cầu" ? needTiles : categoryTiles;
-  return (
-    <div className="grid grid-cols-4 gap-5 xl:gap-6">
-      {tiles.map((tile) => (
-        <MenuTile key={tile.title} tile={tile} variant={tab === "Mua theo nhu cầu" ? "goal" : "category"} />
-      ))}
-    </div>
-  );
-}
-
-function MenuTile({ tile, variant }: { tile: MenuTile; variant: "category" | "goal" | "editorial" }) {
-  const dark = tile.tone === "charcoal" || tile.tone === "amber" || tile.tone === "rose" || tile.tone === "blue";
-  const titleColor = tile.tone === "charcoal" ? "text-white" : "text-[var(--color-ink)]";
-  const surface = getTileSurface(tile.tone);
+function MegaMenuLink({ item }: { item: ShopNavigationItem }) {
+  const dark = item.tone === "charcoal";
+  const surface = getNavigationSurface(item.tone);
 
   return (
     <NavigationMenu.Link asChild>
-      <Link href={tile.href} className={`group relative h-[246px] overflow-hidden rounded-[8px] p-5 font-semibold transition-[background,box-shadow] duration-200 hover:shadow-[0_12px_28px_rgb(0_0_0/0.10)] xl:h-[252px] ${dark ? "text-white" : "text-[var(--color-ink)]"}`} style={{ background: surface }}>
-        {variant !== "category" ? <span className="absolute inset-0 bg-[radial-gradient(circle_at_78%_22%,rgb(255_255_255/0.32),transparent_28%),linear-gradient(180deg,rgb(0_0_0/0.02),rgb(0_0_0/0.20))]" /> : null}
-
-        <span className={`relative z-10 block max-w-[190px] text-[19px] leading-tight xl:text-[20px] ${titleColor}`}>{tile.title}</span>
-        {tile.body ? <span className={`relative z-10 mt-2 block max-w-[150px] text-[12px] leading-5 ${dark ? "text-white/78" : "text-[var(--color-muted)]"}`}>{tile.body}</span> : null}
-        <span className="pointer-events-none absolute inset-x-8 bottom-5 top-[68px] z-0 flex items-end justify-center">
-          {tile.image ? (
-            <Image
-              src={tile.image}
-              alt={tile.title}
-              fill
-              sizes="(min-width: 1280px) 18vw, 22vw"
-              className="object-contain object-bottom transition-transform duration-300 ease-out group-hover:scale-[1.04]"
-            />
-          ) : tile.visual ? (
-            <MenuPackshot visual={tile.visual} tone={tile.tone} variant={variant} />
-          ) : null}
+      <Link href={item.href} className={`group relative grid min-h-[142px] overflow-hidden rounded-[8px] border border-black/5 p-4 transition-[box-shadow,transform,border-color] duration-200 hover:-translate-y-0.5 hover:border-black/10 hover:shadow-[0_12px_28px_rgb(0_0_0/0.10)] xl:min-h-[194px] ${dark ? "text-white" : "text-[var(--color-ink)]"}`} style={{ background: surface }}>
+        <span className={`pointer-events-none absolute inset-0 z-[1] ${dark ? "bg-[linear-gradient(90deg,rgb(0_0_0/0.58)_0%,rgb(0_0_0/0.24)_42%,rgb(0_0_0/0)_76%)]" : "bg-[linear-gradient(90deg,rgb(255_255_255/0.82)_0%,rgb(255_255_255/0.48)_38%,rgb(255_255_255/0)_72%)]"}`} />
+        <span className="relative z-[2] max-w-[44%] xl:max-w-[42%]">
+          <span className="flex flex-wrap items-center gap-2">
+            <span className="text-[16px] font-semibold leading-tight xl:text-[18px]">{item.label}</span>
+            {item.badge ? <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.04em] ${dark ? "bg-white text-[var(--color-ink)]" : "bg-white/80 text-[var(--color-ink)]"}`}>{item.badge}</span> : null}
+          </span>
         </span>
-        <span className="absolute bottom-6 left-5 z-10 grid h-10 w-10 place-items-center overflow-hidden rounded-full bg-white text-[var(--color-ink)] shadow-[0_4px_14px_rgb(0_0_0/0.08)]">
-          <span className="transition-transform duration-300 ease-out group-hover:translate-x-1">→</span>
-        </span>
+        {item.image ? <Image src={item.image} alt="" fill sizes="(min-width: 1280px) 25vw, 33vw" className={`pointer-events-none z-0 select-none transition-transform duration-300 group-hover:scale-[1.035] ${item.imageClassName ?? "object-contain object-[88%_78%] p-5"}`} /> : null}
+        <span className={`absolute bottom-4 left-4 z-[2] inline-grid h-10 w-10 place-items-center rounded-full text-[22px] leading-none transition-transform duration-200 group-hover:translate-x-1 ${dark ? "bg-white text-[var(--color-ink)]" : "bg-white"}`}>→</span>
       </Link>
     </NavigationMenu.Link>
   );
 }
 
-function MenuPackshot({ visual, tone, variant }: { visual: NonNullable<MenuTile["visual"]>; tone: MenuTile["tone"]; variant: "category" | "goal" | "editorial" }) {
-  const isDark = tone === "charcoal" || tone === "amber" || tone === "rose" || tone === "blue";
-  const accent = tone === "amber" || tone === "rose" ? "bg-[var(--color-warning-soft)]" : tone === "blue" ? "bg-[#dff3f8]" : "bg-[var(--color-green-soft)]";
-  const shadow = variant === "category" ? "shadow-[0_18px_32px_rgb(0_0_0/0.10)]" : "shadow-[0_22px_38px_rgb(0_0_0/0.20)]";
-  const label = isDark ? "bg-white/92" : "bg-white";
-
-  if (visual === "tube") {
-    return (
-      <span aria-hidden="true" className="relative block h-full w-full">
-        <span className={`absolute bottom-2 left-[86px] h-[146px] w-[62px] -rotate-6 rounded-b-[26px] rounded-t-[12px] border border-black/10 ${label} ${shadow}`} />
-        <span className="absolute bottom-[130px] left-[100px] h-8 w-9 -rotate-6 rounded-t-[8px] bg-[var(--color-ink)]" />
-        <span className={`absolute bottom-[58px] left-[96px] h-9 w-[50px] -rotate-6 rounded-[6px] ${accent}`} />
-      </span>
-    );
-  }
-
-  if (visual === "bottle") {
-    return (
-      <span aria-hidden="true" className="relative block h-full w-full">
-        <span className={`absolute bottom-2 left-[92px] h-[150px] w-[58px] rounded-b-[18px] rounded-t-[28px] border border-black/10 ${label} ${shadow}`} />
-        <span className="absolute bottom-[140px] left-[89px] h-7 w-[32px] rounded-t-[8px] bg-[var(--color-ink)]" />
-        <span className={`absolute bottom-[66px] left-[100px] h-10 w-10 rounded-full ${accent}`} />
-      </span>
-    );
-  }
-
-  if (visual === "combo") {
-    return (
-      <span aria-hidden="true" className="relative block h-full w-full">
-        <span className={`absolute bottom-3 left-12 h-[112px] w-[88px] rounded-[10px] border border-black/10 ${label} ${shadow}`} />
-        <span className={`absolute bottom-[78px] left-[66px] h-7 w-14 rounded-full ${accent}`} />
-        <span className={`absolute bottom-3 left-[124px] h-[138px] w-[64px] rounded-b-[22px] rounded-t-[28px] border border-black/10 ${label} ${shadow}`} />
-        <span className="absolute bottom-[62px] left-[136px] h-9 w-11 rounded-[6px] bg-[var(--color-ink)]" />
-      </span>
-    );
-  }
-
-  return (
-    <span aria-hidden="true" className="relative block h-full w-full">
-      <span className={`absolute bottom-4 left-[72px] h-[122px] w-[114px] rounded-[10px] border border-black/10 ${label} ${shadow}`} />
-      <span className="absolute bottom-[106px] left-[74px] h-7 w-[82px] rounded-full bg-[var(--color-ink)]" />
-      <span className={`absolute bottom-[62px] left-[90px] h-9 w-[78px] rounded-[6px] ${accent}`} />
-    </span>
-  );
-}
-
-function getTileSurface(tone: MenuTile["tone"]) {
-  if (tone === "charcoal") return "linear-gradient(135deg, #050505 0%, #171717 48%, #3a332c 100%)";
-  if (tone === "amber") return "linear-gradient(135deg, #7c3417 0%, #b95c24 52%, #d8a15c 100%)";
-  if (tone === "blue") return "linear-gradient(135deg, #eaf5f8 0%, #a9ced8 48%, #315767 100%)";
-  if (tone === "rose") return "linear-gradient(135deg, #5d1f21 0%, #a64035 52%, #e19a6f 100%)";
-  if (tone === "mint") return "linear-gradient(135deg, #f7f4ec 0%, #dcefd3 54%, #bedbb5 100%)";
-  return "linear-gradient(135deg, #f7f4ee 0%, #eee7dc 100%)";
+function getNavigationSurface(tone: ShopNavigationItem["tone"]) {
+  if (tone === "charcoal") return "linear-gradient(135deg, #050505 0%, #171717 58%, #2c2823 100%)";
+  if (tone === "amber") return "linear-gradient(135deg, #fff9ed 0%, #f6dcab 100%)";
+  if (tone === "blue") return "linear-gradient(135deg, #f5fbff 0%, #d8eef8 100%)";
+  if (tone === "rose") return "linear-gradient(135deg, #fff5f0 0%, #f2d2c7 100%)";
+  if (tone === "mint") return "linear-gradient(135deg, #f8f5ee 0%, #dcefd3 100%)";
+  return "linear-gradient(135deg, #ffffff 0%, #f7f4ee 100%)";
 }
 
 function AccountPopover({ open, customer, loading, onClose, onLogout }: { open: boolean; customer: HeaderCustomer | null; loading: boolean; onClose: () => void; onLogout: () => void }) {
@@ -466,16 +413,13 @@ function AccountPopover({ open, customer, loading, onClose, onLogout }: { open: 
   );
 }
 
-function MobileMenu({ open, customer, loading, onLogout, onClose, activeTab, setActiveTab, onHashNavClick }: { open: boolean; customer: HeaderCustomer | null; loading: boolean; onLogout: () => void; onClose: () => void; activeTab: MegaTab; setActiveTab: (tab: MegaTab) => void; onHashNavClick: (event: MouseEvent<HTMLAnchorElement>, href: string) => void }) {
-  const tiles = activeTab === "Mua theo nhu cầu" ? needTiles : categoryTiles;
+function MobileMenu({ open, customer, loading, onLogout, onClose, onHashNavClick }: { open: boolean; customer: HeaderCustomer | null; loading: boolean; onLogout: () => void; onClose: () => void; onHashNavClick: (event: MouseEvent<HTMLAnchorElement>, href: string) => void }) {
   const loggedIn = Boolean(customer);
-  const linkCards = [
-    { title: "Tư vấn chọn nhanh", body: "Gợi ý kín đáo theo nhu cầu", href: "/collections/mong-nhe", accent: true },
-    { title: "Vì sao Herfeel?", href: "/#why-herfeel" },
-    { title: "Hướng dẫn", href: "/collections/mong-nhe" },
-    { title: "Giao hàng kín đáo", href: "/checkout" },
-    { title: "Tài khoản & đơn hàng", href: "/account" },
-  ];
+  const [openGroups, setOpenGroups] = useState<ShopNavigationGroupId[]>(shopNavigationGroups.map((group) => group.id));
+
+  function toggleGroup(groupId: ShopNavigationGroupId) {
+    setOpenGroups((current) => (current.includes(groupId) ? current.filter((id) => id !== groupId) : [...current, groupId]));
+  }
 
   return (
     <AnimatePresence>
@@ -493,28 +437,44 @@ function MobileMenu({ open, customer, loading, onLogout, onClose, activeTab, set
             </div>
             <div className="min-h-0 flex-1 overflow-y-auto">
               <div className="px-5 pb-6 pt-7">
-                <div className="grid grid-cols-2 gap-3 rounded-[var(--radius-pill)]" role="tablist" aria-label="Mua sắm theo">
-                  {megaTabs.map((tab) => (
-                    <button
-                      key={tab}
-                      type="button"
-                      role="tab"
-                      aria-selected={activeTab === tab}
-                      className={activeTab === tab ? "h-10 rounded-[var(--radius-pill)] bg-[var(--color-ink)] px-3 text-[14px] font-bold text-white" : "h-10 rounded-[var(--radius-pill)] bg-[#e9e9e9] px-3 text-[14px] font-bold text-[var(--color-ink)]"}
-                      onClick={() => setActiveTab(tab)}
-                    >
-                      {tab === "Mua theo nhu cầu" ? "Nhu cầu" : "Danh mục"}
-                    </button>
-                  ))}
+                <p className="text-[12px] font-semibold uppercase tracking-[0.08em] text-[var(--color-muted)]">Mua sắm</p>
+                <div className="mt-4 grid gap-3">
+                  {shopNavigationGroups.map((group) => {
+                    const expanded = openGroups.includes(group.id);
+                    return (
+                      <section key={group.id} className="overflow-hidden rounded-[12px] border border-[var(--color-border)] bg-white">
+                        <button type="button" className="flex min-h-[58px] w-full items-center justify-between gap-4 px-4 text-left" aria-expanded={expanded} onClick={() => toggleGroup(group.id)}>
+                          <span>
+                            <span className="block text-[16px] font-bold leading-tight">{group.label}</span>
+                          </span>
+                          <span className={`text-[22px] leading-none transition-transform duration-200 ${expanded ? "rotate-45" : ""}`}>+</span>
+                        </button>
+                        <AnimatePresence initial={false}>
+                          {expanded ? (
+                            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.18, ease: easeOutExpo }} className="overflow-hidden">
+                              <div className="grid gap-1 border-t border-[var(--color-border)] p-2">
+                                {group.items.map((item) => (
+                                  <Link key={item.label} href={item.href} className="grid min-h-[58px] grid-cols-[48px_1fr_auto] items-center gap-3 rounded-[8px] px-3 py-2 hover:bg-[var(--color-surface)]" onClick={onClose}>
+                                    <span className="relative block aspect-square overflow-hidden rounded-[8px] bg-[var(--color-surface)]">
+                                      {item.image ? <Image src={item.image} alt="" fill sizes="48px" className={item.imageClassName ?? "object-contain p-2"} /> : null}
+                                    </span>
+                                    <span>
+                                      <span className="block text-[15px] font-semibold leading-tight">{item.label}</span>
+                                    </span>
+                                    <span className="text-[18px] leading-none">→</span>
+                                  </Link>
+                                ))}
+                              </div>
+                            </motion.div>
+                          ) : null}
+                        </AnimatePresence>
+                      </section>
+                    );
+                  })}
                 </div>
-                <motion.div key={activeTab} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.18, ease: easeOutExpo }} className="mt-6 grid grid-cols-2 gap-3">
-                  {tiles.map((tile) => (
-                    <MobileMenuTile key={tile.title} tile={tile} onClose={onClose} />
-                  ))}
-                </motion.div>
-                <div className="mt-6 grid gap-3">
-                  <Link href="/collections/combo" className="flex h-[46px] items-center justify-center rounded-[var(--radius-pill)] border border-[#34824b] bg-[var(--color-green-soft)] text-[18px] font-bold" onClick={onClose}>Combo tiết kiệm</Link>
-                  <Link href="/shop" className="flex h-[46px] items-center justify-center rounded-[var(--radius-pill)] bg-[var(--color-ink)] text-[18px] font-bold !text-white" onClick={onClose}>Mua tất cả</Link>
+                <div className="mt-5 grid gap-3">
+                  <Link href="/shop" className="flex h-[46px] items-center justify-center rounded-[var(--radius-pill)] bg-[var(--color-ink)] text-[17px] font-bold !text-white" onClick={onClose}>Xem tất cả sản phẩm</Link>
+                  <p className="text-center text-xs font-semibold text-[var(--color-muted)]">{shopNavigationTrustNote}</p>
                 </div>
               </div>
               <div className="bg-[var(--color-surface)] px-5 py-7">
@@ -539,21 +499,18 @@ function MobileMenu({ open, customer, loading, onLogout, onClose, activeTab, set
                   </div>
                 </div>
                 <div className="grid gap-3">
-                  {linkCards.map((link) => (
+                  {mainNav.slice(1).map((link) => (
                     <Link
-                      key={link.title}
+                      key={link.label}
                       href={link.href}
-                      className={link.accent ? "grid min-h-[68px] grid-cols-[1fr_auto] items-center gap-3 rounded-[22px] bg-[#e2f9df] px-6 py-3" : "grid min-h-[68px] grid-cols-[1fr_auto] items-center gap-3 rounded-[12px] bg-white px-7 py-3"}
+                      className="grid min-h-[64px] grid-cols-[1fr_auto] items-center gap-3 rounded-[12px] bg-white px-5 py-3"
                       onClick={(event) => {
                         onHashNavClick(event, link.href);
                         if (!event.defaultPrevented) onClose();
                       }}
                     >
-                      <span className="min-w-0">
-                        <span className="block text-[17px] font-bold leading-tight">{link.title}</span>
-                        {link.body ? <span className="mt-1 block text-[14px] leading-tight text-[var(--color-muted)]">{link.body}</span> : null}
-                      </span>
-                      <span className="grid h-10 w-10 place-items-center rounded-full bg-white text-[21px] leading-none">→</span>
+                      <span className="block text-[17px] font-bold leading-tight">{link.label}</span>
+                      <span className="grid h-9 w-9 place-items-center rounded-full bg-[var(--color-surface)] text-[18px] leading-none">→</span>
                     </Link>
                   ))}
                 </div>
@@ -563,18 +520,6 @@ function MobileMenu({ open, customer, loading, onLogout, onClose, activeTab, set
         </>
       ) : null}
     </AnimatePresence>
-  );
-}
-
-function MobileMenuTile({ tile, onClose }: { tile: MenuTile; onClose: () => void }) {
-  return (
-    <Link href={tile.href} className="group relative aspect-[1/1] min-h-[139px] overflow-hidden rounded-[8px] bg-[var(--color-surface)] p-4 text-[var(--color-ink)]" onClick={onClose}>
-      <span className="relative z-10 block text-[15px] font-bold leading-tight">{tile.title}</span>
-      <span className="pointer-events-none absolute inset-x-4 bottom-5 top-12">
-        <Image src={tile.image} alt="" fill sizes="50vw" className="object-contain object-bottom transition-transform duration-300 ease-out group-hover:scale-[1.04]" />
-      </span>
-      <span className="absolute bottom-4 left-4 z-10 grid h-10 w-10 place-items-center rounded-full bg-white text-[22px] leading-none shadow-[0_4px_14px_rgb(0_0_0/0.08)]">→</span>
-    </Link>
   );
 }
 

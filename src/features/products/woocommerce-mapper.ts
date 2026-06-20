@@ -41,6 +41,7 @@ export function mapWooCommerceProduct(product: WooCommerceProductResponse): Prod
   const name = decodeHtmlEntities(product.name);
   const currency = product.prices.currency_code || "VND";
   const price = parseWooAmount(product.prices.price, product.prices.currency_minor_unit);
+  const isOrderable = product.is_purchasable && product.is_in_stock && price > 0;
   const regularPrice = parseWooAmount(product.prices.regular_price, product.prices.currency_minor_unit);
   const hasCompareAtPrice = product.on_sale && regularPrice > 0 && regularPrice !== price;
   const compareAtPrice = hasCompareAtPrice ? regularPrice : undefined;
@@ -89,7 +90,7 @@ export function mapWooCommerceProduct(product: WooCommerceProductResponse): Prod
     specs,
     onSale: product.on_sale,
     inStock: product.is_in_stock,
-    purchasable: product.is_purchasable,
+    purchasable: isOrderable,
     stockLabel,
     rating: Number.parseFloat(product.average_rating) || 0,
     reviewCount: product.review_count,

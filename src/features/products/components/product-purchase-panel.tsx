@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { buildCartLineItem, isProductOrderable } from "@/features/cart/cart-line-builder";
 import { useCart } from "@/features/cart/cart-provider";
-import type { CartLineItem } from "@/features/cart/cart-types";
 import type { ProductDetail } from "@/features/products/product-types";
 import { formatPrice } from "@/lib/format-price";
 
@@ -24,25 +24,13 @@ export function ProductPurchasePanel({ product }: ProductPurchasePanelProps) {
   );
   const unitPrice = selectedVariant?.price ?? product.price;
   const totalPrice = unitPrice * quantity;
-  const canAddToCart = product.inStock && product.purchasable !== false;
+  const canAddToCart = isProductOrderable(product);
 
   function handleAddToCart() {
-    if (!canAddToCart || !selectedVariant) return;
+    if (!canAddToCart) return;
 
-    const image = selectedVariant.image ?? product.thumbnail;
-    const lineItem: CartLineItem = {
-      key: `${product.id}:${selectedVariant.id}`,
-      productId: product.id,
-      variationId: selectedVariant.id,
-      sku: product.sku,
-      name: product.name,
-      variantLabel: selectedVariant.label,
-      quantity,
-      unitPrice: { value: unitPrice, currency: product.currency },
-      lineSubtotal: { value: totalPrice, currency: product.currency },
-      image: image ? { src: image.src, alt: image.alt, width: image.width, height: image.height } : undefined,
-      attributes: product.specs.slice(0, 3).map((spec) => ({ name: spec.label, value: spec.value })),
-    };
+    const lineItem = buildCartLineItem(product, { variant: selectedVariant, quantity });
+    if (!lineItem) return;
 
     dispatch({ type: "cart/add-item", payload: lineItem });
     setAdded(true);
@@ -104,9 +92,9 @@ export function ProductPurchasePanel({ product }: ProductPurchasePanelProps) {
               <span aria-live="polite">{quantity}</span>
               <button type="button" className="grid h-8 w-8 place-items-center rounded-full" aria-label="Tăng số lượng" onClick={() => setQuantity((value) => Math.min(9, value + 1))}>+</button>
             </div>
-            <Button className="min-h-12 flex-1" disabled={!canAddToCart} onClick={handleAddToCart}>{canAddToCart ? "Thêm vào giỏ" : "Hết hàng"}</Button>
+            <Button className="min-h-12 flex-1" disabled={!canAddToCart} onClick={handleAddToCart}>{canAddToCart ? "Thêm vào giỏ" : "Chưa thể đặt"}</Button>
           </div>
-          <p className="mt-2.5 rounded-sm bg-[var(--color-green-soft)] px-3 py-2 text-[11px] font-semibold leading-snug">{product.stockLabel ?? "Cập nhật tồn kho"}. Đóng gói kín đáo. Thanh toán thật chưa được kết nối trong bản mock.</p>
+          <p className="mt-2.5 rounded-sm bg-[var(--color-green-soft)] px-3 py-2 text-[11px] font-semibold leading-snug">{product.stockLabel ?? "Cập nhật tồn kho"}. Chỉ sản phẩm WooCommerce có giá và cho phép mua mới được đặt COD.</p>
         </div>
 
         <div className="space-y-1">

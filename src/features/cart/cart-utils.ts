@@ -1,4 +1,5 @@
 import { commerceConfig } from "@/config/commerce";
+import { isValidOrderCartLine } from "./cart-line-builder";
 import type { AppliedCoupon, CartItem, CartLineItem, CartState, CartTotals } from "./cart-types";
 
 const maxSyncedCartItems = 24;
@@ -43,13 +44,16 @@ export function calculateCartTotals(items: CartLineItem[], coupons: AppliedCoupo
 }
 
 export function mergeAccountCartStates(localCart: CartState, savedCart: CartState | null): CartState {
-  if (!savedCart) return withSyncedTotals(clampCartState(localCart));
+  const validLocalCart = clampCartState(localCart);
+  const validSavedCart = savedCart ? clampCartState(savedCart) : null;
 
-  const localItemsByKey = new Map(localCart.items.map((item) => [item.key, item]));
-  const savedItemsByKey = new Map(savedCart.items.map((item) => [item.key, item]));
+  if (!validSavedCart) return withSyncedTotals(validLocalCart);
+
+  const localItemsByKey = new Map(validLocalCart.items.map((item) => [item.key, item]));
+  const savedItemsByKey = new Map(validSavedCart.items.map((item) => [item.key, item]));
   const mergedItems: CartLineItem[] = [];
 
-  for (const savedItem of savedCart.items) {
+  for (const savedItem of validSavedCart.items) {
     const localItem = localItemsByKey.get(savedItem.key);
     mergedItems.push({
       ...(localItem ?? savedItem),
@@ -57,14 +61,14 @@ export function mergeAccountCartStates(localCart: CartState, savedCart: CartStat
     });
   }
 
-  for (const localItem of localCart.items) {
+  for (const localItem of validLocalCart.items) {
     if (!savedItemsByKey.has(localItem.key) && mergedItems.length < maxSyncedCartItems) {
       mergedItems.push({ ...localItem, quantity: clampLineQuantity(localItem.quantity) });
     }
   }
 
   return withSyncedTotals({
-    ...localCart,
+    ...validLocalCart,
     items: mergedItems.slice(0, maxSyncedCartItems).map(withLineSubtotal),
     coupons: localCart.coupons,
     isLoading: false,
@@ -75,7 +79,10 @@ export function mergeAccountCartStates(localCart: CartState, savedCart: CartStat
 export function clampCartState(cart: CartState): CartState {
   return withSyncedTotals({
     ...cart,
-    items: cart.items.slice(0, maxSyncedCartItems).map((item) => withLineSubtotal({ ...item, quantity: clampLineQuantity(item.quantity) })),
+    items: cart.items
+      .filter(isValidOrderCartLine)
+      .slice(0, maxSyncedCartItems)
+      .map((item) => withLineSubtotal({ ...item, quantity: clampLineQuantity(item.quantity) })),
     isLoading: false,
     error: undefined,
   });
