@@ -401,7 +401,7 @@ function AccountPopover({ open, customer, loading, onClose, onLogout }: { open: 
                 <Link href="/register" role="menuitem" className="flex h-11 items-center justify-center rounded-[var(--radius-pill)] border border-[var(--color-border)] text-sm font-semibold" onClick={onClose}>Đăng ký</Link>
               </div>
             )}
-            <div className="grid border-t border-[var(--color-border)] p-2 text-sm font-semibold">
+            <div className="grid border-t border-[var(--color-border)] p-3 text-sm font-semibold">
               <Link href="/account" role="menuitem" className="rounded-[var(--radius-sm)] px-3 py-3 hover:bg-[var(--color-surface)]" onClick={onClose}>Theo dõi đơn</Link>
               <Link href="/account" role="menuitem" className="rounded-[var(--radius-sm)] px-3 py-3 hover:bg-[var(--color-surface)]" onClick={onClose}>Hỗ trợ riêng tư</Link>
               {loggedIn ? <Link href="/checkout" role="menuitem" className="rounded-[var(--radius-sm)] px-3 py-3 hover:bg-[var(--color-surface)]" onClick={onClose}>Tiếp tục thanh toán</Link> : null}
